@@ -148,80 +148,106 @@
 
         <!-- GAMES -->
         <section id="games" class="py-20 bg-gray-900">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-6 fade-item opacity-0 translate-y-6 transition duration-700">Games</h2>
-            <p class="text-gray-400 mb-8 max-w-3xl">A selection of projects — from jam builds to full prototypes and tutorials.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Card 1: Usurpers: Freedom -->
-            <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
-                <div class="relative">
-                <img src="assets/img/usurpers-thumb.png" alt="Usurpers: Freedom" class="w-full h-48 object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div class="absolute left-4 bottom-4">
-                    <h3 class="text-lg font-bold text-white">Usurpers: Freedom</h3>
-                    <p class="text-sm text-gray-300">Dungeon-crawler roguelike with deep lore and co-op survival waves.</p>
-                </div>
-                </div>
-                <div class="p-4 flex items-center justify-between">
-                <button onclick="openGameModal('Usurpers: Freedom','A dungeon-crawling roguelike blending storytelling and combat, where players seek freedom within a cursed labyrinth.','assets/img/usurpers-thumb.png')"
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-6 fade-item opacity-0 translate-y-6 transition duration-700">Games</h2>
+                <p class="text-gray-400 mb-8 max-w-3xl">A selection of projects — from jam builds to full prototypes and tutorials.</p>
+        
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+                <!-- Card 1: Usurpers: Freedom -->
+                <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="assets/img/usurpers-thumb.png" alt="Usurpers: Freedom" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute left-4 bottom-4">
+                            <h3 class="text-lg font-bold text-white">Usurpers: Freedom</h3>
+                            <p class="text-sm text-gray-300">Dungeon-crawler roguelike with deep lore and co-op survival waves.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 flex items-center justify-between">
+                        <button onclick="openGameModal(
+                            'Usurpers: Freedom',
+                            'A dungeon-crawling roguelike blending storytelling and combat, where players seek freedom within a cursed labyrinth.',
+                            'assets/img/usurpers-thumb.png',
+                            'https://drive.google.com/drive/folders/1epmU8k1ekTDrBfbfmxxN8HRnrunpEuCt?usp=sharing'
+                        )"
                         class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
-                <a href="https://drive.google.com/drive/folders/1epmU8k1ekTDrBfbfmxxN8HRnrunpEuCt?usp=sharing" target="_blank" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
-                </div>
-            </article>
-
-            <!-- Card 2: Bullet Hell (MonoGame) -->
-            <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
-                <div class="relative">
-                <img src="assets/img/bullethell-thumb.png" alt="Bullet Hell" class="w-full h-48 object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div class="absolute left-4 bottom-4">
-                    <h3 class="text-lg font-bold text-white">Bullet Hell (MonoGame)</h3>
-                    <p class="text-sm text-gray-300">Fast-paced arcade shooter focusing on precise movement and pattern dodging.</p>
-                </div>
-                </div>
-                <div class="p-4 flex items-center justify-between">
-                <button onclick="openGameModal('Bullet Hell','A fast-paced arcade shooter focusing on dodging patterns and precise movement.','assets/img/bullethell-thumb.png')"
+        
+                        <a href="https://drive.google.com/drive/folders/1epmU8k1ekTDrBfbfmxxN8HRnrunpEuCt?usp=sharing" target="_blank" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
+                    </div>
+                </article>
+        
+                <!-- Card 2: Bullet Hell -->
+                <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="assets/img/bullethell-thumb.png" alt="Bullet Hell" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute left-4 bottom-4">
+                            <h3 class="text-lg font-bold text-white">Bullet Hell (MonoGame)</h3>
+                            <p class="text-sm text-gray-300">Fast-paced arcade shooter focusing on precise movement and pattern dodging.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 flex items-center justify-between">
+                        <button onclick="openGameModal(
+                            'Bullet Hell',
+                            'A fast-paced arcade shooter focusing on dodging patterns and precise movement.',
+                            'assets/img/bullethell-thumb.png',
+                            'https://drive.google.com/drive/folders/1b9kDy4fTHTZOfctkiCMggJPmzrUEWBlG?usp=sharing'
+                        )"
                         class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
-                <a href="https://drive.google.com/drive/folders/1b9kDy4fTHTZOfctkiCMggJPmzrUEWBlG?usp=sharing" target="_blank" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
-                </div>
-            </article>
-
-            <!-- Card 3: Matching Card Game -->
-            <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
-                <div class="relative">
-                <img src="assets/img/matching-thumb.png" alt="Matching Card Game" class="w-full h-48 object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div class="absolute left-4 bottom-4">
-                    <h3 class="text-lg font-bold text-white">Matching Card Game</h3>
-                    <p class="text-sm text-gray-300">Casual puzzle game testing memory and pattern recognition.</p>
-                </div>
-                </div>
-                <div class="p-4 flex items-center justify-between">
-                <button onclick="openGameModal('Matching Card Game','A casual puzzle game testing memory and focus through pattern recognition.','assets/img/matching-thumb.png')"
+        
+                        <a href="https://drive.google.com/drive/folders/1b9kDy4fTHTZOfctkiCMggJPmzrUEWBlG?usp=sharing" target="_blank" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
+                    </div>
+                </article>
+        
+                <!-- Card 3: Matching Card Game -->
+                <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="assets/img/matching-thumb.png" alt="Matching Card Game" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute left-4 bottom-4">
+                            <h3 class="text-lg font-bold text-white">Matching Card Game</h3>
+                            <p class="text-sm text-gray-300">Casual puzzle game testing memory and pattern recognition.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 flex items-center justify-between">
+                        <button onclick="openGameModal(
+                            'Matching Card Game',
+                            'A casual puzzle game testing memory and focus through pattern recognition.',
+                            'assets/img/matching-thumb.png',
+                            'https://drive.google.com/drive/folders/13UidUAk9dOEEUYLuUJJiwKlgayW0Xvfc?usp=sharing'
+                        )"
                         class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
-                <a href="https://drive.google.com/drive/folders/13UidUAk9dOEEUYLuUJJiwKlgayW0Xvfc?usp=sharing" target="_blank" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
-                </div>
-            </article>
-
-            <!-- Card 4: Open World Tutorial (Video) -->
-            <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
-                <div class="relative">
-                <img src="assets/img/openworld-thumb.png" alt="Open World Tutorial" class="w-full h-48 object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div class="absolute left-4 bottom-4">
-                    <h3 class="text-lg font-bold text-white">Open World Tutorial</h3>
-                    <p class="text-sm text-gray-300">Directed tutorial showcasing world navigation & design principles.</p>
-                </div>
-                </div>
-                <div class="p-4 flex items-center justify-between">
-                <button onclick="openGameModal('Open World Tutorial','A directed tutorial project exploring game world navigation and design principles.','assets/img/openworld-thumb.png')"
+        
+                        <a href="https://drive.google.com/drive/folders/13UidUAk9dOEEUYLuUJJiwKlgayW0Xvfc?usp=sharing" target="_blank" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
+                    </div>
+                </article>
+        
+                <!-- Card 4: Open World Tutorial -->
+                <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="assets/img/openworld-thumb.png" alt="Open World Tutorial" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute left-4 bottom-4">
+                            <h3 class="text-lg font-bold text-white">Open World Tutorial</h3>
+                            <p class="text-sm text-gray-300">Directed tutorial showcasing world navigation & design principles.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 flex items-center justify-between">
+                        <button onclick="openGameModal(
+                            'Open World Tutorial',
+                            'A directed tutorial project exploring game world navigation and design principles.',
+                            'assets/img/openworld-thumb.png',
+                            'https://www.youtube.com/watch?v=ndZnoE38mmM&list=PLJqgAlQY92wCnQ8HqS0sJWbVB6EKedSqk'
+                        )"
                         class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
-                <a href="https://www.youtube.com/watch?v=ndZnoE38mmM&list=PLJqgAlQY92wCnQ8HqS0sJWbVB6EKedSqk" target="_blank" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Watch</a>
+        
+                        <a href="https://www.youtube.com/watch?v=ndZnoE38mmM&list=PLJqgAlQY92wCnQ8HqS0sJWbVB6EKedSqk" target="_blank" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Watch</a>
+                    </div>
+                </article>
+        
                 </div>
-            </article>
             </div>
-        </div>
         </section>
 
         <!-- ART & MEDIA -->
@@ -678,7 +704,6 @@
             <p id="gameModalDesc" class="text-gray-300 mb-4"></p>
             <div class="flex gap-3">
                 <a id="gameModalDownload" href="#" class="px-4 py-2 bg-cyan-500 text-white rounded-full">Download</a>
-                <a id="gameModalExtra" href="#" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full">More</a>
             </div>
             </div>
         </div>
@@ -757,13 +782,18 @@
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // Game modal functions
-        function openGameModal(title, desc, imgSrc) {
+        function openGameModal(title, desc, imgSrc, downloadLink) {
         document.getElementById('gameModalTitle').textContent = title;
         document.getElementById('gameModalDesc').textContent = desc;
         document.getElementById('gameModalImg').src = imgSrc;
+    
+        // Set the modal's download link
+        document.getElementById('gameModalDownload').href = downloadLink;
+    
         document.getElementById('gameModal').classList.remove('hidden');
         document.getElementById('gameModal').classList.add('flex');
         }
+
         function closeGameModal() {
         document.getElementById('gameModal').classList.add('hidden');
         document.getElementById('gameModal').classList.remove('flex');
@@ -875,6 +905,7 @@
     </body>
 
 </html>
+
 
 
 
