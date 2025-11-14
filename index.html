@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Aldreck Obenario — Portfolio</title>
+
+        <!-- Tailwind CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+        <style>
+            :root { color-scheme: dark; }
+            body { font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+            /* small custom transitions not in tailwind */
+            .translate-y-6 { transform: translateY(1.5rem); }
+            .modal-backdrop { background: rgba(2,6,23,0.7); backdrop-filter: blur(6px); }
+        </style>
+    </head>
+    <body class="bg-gray-950 text-gray-100 antialiased">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-sm border-b border-gray-800">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <a href="#hero" class="flex items-center gap-3">
+            <span class="text-2xl font-bold text-cyan-400">Aldreck</span>
+            <span class="text-sm text-gray-400 hidden sm:inline"> — Game Dev • Aspiring Game Designer • Composer • 3D</span>
+        </a>
+
+        <ul class="hidden md:flex items-center space-x-6 text-gray-300">
+            <li><a class="hover:text-cyan-400 transition" href="#about">About</a></li>
+            <li><a class="hover:text-cyan-400 transition" href="#thesis">Thesis & Documents</a></li>
+            <li><a class="hover:text-cyan-400 transition" href="#games">Games</a></li>
+            <li><a class="hover:text-cyan-400 transition" href="#art">Art & Music</a></li>
+            <li><a class="hover:text-cyan-400 transition" href="#certificates">Certificates</a></li>
+            <li><a class="hover:text-cyan-400 transition" href="#contact">Contact</a></li>
+        </ul>
+
+        <button id="menuBtn" class="md:hidden p-2">
+            <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+        </nav>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-gray-800 bg-gray-900/95">
+        <div class="px-6 py-4 flex flex-col gap-3">
+            <a href="#about" class="text-gray-300 hover:text-cyan-400">About</a>
+            <a href="#games" class="text-gray-300 hover:text-cyan-400">Games</a>
+            <a href="#certificates" class="text-gray-300 hover:text-cyan-400">Certificates</a>
+            <a href="#contact" class="text-gray-300 hover:text-cyan-400">Contact</a>
+        </div>
+        </div>
+    </header>
+
+    <main class="pt-80">
+
+        <!-- HERO -->
+        <section id="hero" class="min-h-[60vh] flex items-center justify-center text-center px-6">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Hi, I’m <span class="text-cyan-400">Aldreck Paul!</span></h1>
+            <p class="text-gray-400 text-lg md:text-xl mb-8">
+            Hello welcome to my portfolio!
+            I am an IT Student Specializing in Animation & Game Development. 
+            I make worlds, write lore, compose music, and make game systems.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+            <a href="#games" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 rounded-full text-white transition">View My Games</a>
+            <a href="#art" class="px-6 py-3 border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-gray-900 rounded-full transition">View My Art & Music!</a>
+            <a href="#thesis" class="px-6 py-3 border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-gray-900 rounded-full transition">View My Thesis & Other Documents!</a>
+            <a href="#about" class="px-6 py-3 border border-gray-700 text-gray-300 hover:bg-gray-800 rounded-full transition">About Me</a>
+            <a href="#certificates" class="px-6 py-3 border border-gray-700 text-gray-300 hover:bg-gray-800 rounded-full transition">Certificates</a>
+            </div>
+
+            <div class="mt-12 text-gray-500 animate-bounce">
+            <a href="#about">↓ Scroll</a>
+            </div>
+        </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="py-20 bg-gray-950">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="fade-item opacity-0 translate-y-6 transition duration-700">
+            <img src="assets/img/aldreck.png" alt="Aldreck" class="w-56 h-56 rounded-full mx-auto mb-6 ring-4 ring-cyan-500 object-cover shadow-xl">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-4">About Me</h2>
+            <p class="text-gray-300 leading-relaxed text-lg mb-6">
+                Hello! My name is Aldreck, and I’m an IT student specializing in Animation and Game Development.
+                I consider myself a jack of all trades currently exploring which area of the game industry I want to master.
+                When developing games, I take on creative and technical roles that let me use my strengths in game design, lore crafting,
+                and music composition, while also applying my skills in programming and art.
+                I’m passionate about building worlds, telling stories, and bringing ideas to life.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Unity (C#)</span>
+                <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Autodesk Maya</span>
+                <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Game Design</span>
+                <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Music Composition</span>
+                <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">2D / 3D Art</span>
+                <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Frontend Dev</span>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- THESIS & DOCUMENTS -->
+        <section id="thesis" class="py-20 bg-gray-950">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title">Thesis & Documents</h2>
+            <p class="text-gray-400 mb-8 max-w-3xl">
+            Explore my academic works, including my thesis and other key documents.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Document 1 -->
+            <a
+                href="https://docs.google.com/document/d/17AoBZVpaRd5m9ErvbaOQyEH7CeRmc4dM/edit?usp=sharing&ouid=113043589349280326277&rtpof=true&sd=true"
+                class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition"
+                target="_blank"
+            >
+                <div class="p-4">
+                <h3 class="text-lg font-semibold text-cyan-400">Thesis: Usurpers: Freedom</h3>
+                <p class="text-gray-300 text-sm">An in-depth exploration of the game’s lore and mechanics.</p>
+                </div>
+            </a>
+
+            <!-- Document 2 -->
+            <a
+                href="https://docs.google.com/document/d/1etXinGwaqqHfHUi95OXWhA23BS76RFwg/edit?usp=sharing&ouid=113043589349280326277&rtpof=true&sd=true"
+                class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition"
+                target="_blank"
+            >
+                <div class="p-4">
+                <h3 class="text-lg font-semibold text-cyan-400">Game Design Document</h3>
+                <p class="text-gray-300 text-sm">The GDD for Usurpers' Freedom.</p>
+                </div>
+            </a>
+
+            <!-- Document 3 -->
+            <a
+                href="assets/docs/certifications.pdf"
+                class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition"
+                target="_blank"
+            >
+                <div class="p-4">
+                <h3 class="text-lg font-semibold text-cyan-400">Certifications</h3>
+                <p class="text-gray-300 text-sm">A collection of my professional certifications.</p>
+                </div>
+            </a>
+            </div>
+        </div>
+        </section>
+
+        <!-- GAMES -->
+        <section id="games" class="py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-6 fade-item opacity-0 translate-y-6 transition duration-700">Games</h2>
+            <p class="text-gray-400 mb-8 max-w-3xl">A selection of projects — from jam builds to full prototypes and tutorials.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1: Usurpers: Freedom -->
+            <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
+                <div class="relative">
+                <img src="assets/img/usurpers-thumb.png" alt="Usurpers: Freedom" class="w-full h-48 object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute left-4 bottom-4">
+                    <h3 class="text-lg font-bold text-white">Usurpers: Freedom</h3>
+                    <p class="text-sm text-gray-300">Dungeon-crawler roguelike with deep lore and co-op survival waves.</p>
+                </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                <button onclick="openGameModal('Usurpers: Freedom','A dungeon-crawling roguelike blending storytelling and combat, where players seek freedom within a cursed labyrinth.','assets/img/usurpers-thumb.jpg')"
+                        class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
+                <a href="https://drive.google.com/drive/folders/1epmU8k1ekTDrBfbfmxxN8HRnrunpEuCt?usp=sharing" target="_blank" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
+                </div>
+            </article>
+
+            <!-- Card 2: Bullet Hell (MonoGame) -->
+            <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
+                <div class="relative">
+                <img src="assets/img/bullethell-thumb.png" alt="Bullet Hell" class="w-full h-48 object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute left-4 bottom-4">
+                    <h3 class="text-lg font-bold text-white">Bullet Hell (MonoGame)</h3>
+                    <p class="text-sm text-gray-300">Fast-paced arcade shooter focusing on precise movement and pattern dodging.</p>
+                </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                <button onclick="openGameModal('Bullet Hell','A fast-paced arcade shooter focusing on dodging patterns and precise movement.','assets/img/bullethell-thumb.jpg')"
+                        class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
+                <a href="https://drive.google.com/drive/folders/1b9kDy4fTHTZOfctkiCMggJPmzrUEWBlG?usp=sharing" target="_blank" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
+                </div>
+            </article>
+
+            <!-- Card 3: Matching Card Game -->
+            <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
+                <div class="relative">
+                <img src="assets/img/matching-thumb.png" alt="Matching Card Game" class="w-full h-48 object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute left-4 bottom-4">
+                    <h3 class="text-lg font-bold text-white">Matching Card Game</h3>
+                    <p class="text-sm text-gray-300">Casual puzzle game testing memory and pattern recognition.</p>
+                </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                <button onclick="openGameModal('Matching Card Game','A casual puzzle game testing memory and focus through pattern recognition.','assets/img/matching-thumb.jpg')"
+                        class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
+                <a href="https://drive.google.com/drive/folders/13UidUAk9dOEEUYLuUJJiwKlgayW0Xvfc?usp=sharing" target="_blank" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
+                </div>
+            </article>
+
+            <!-- Card 4: Open World Tutorial (Video) -->
+            <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
+                <div class="relative">
+                <img src="assets/img/openworld-thumb.png" alt="Open World Tutorial" class="w-full h-48 object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute left-4 bottom-4">
+                    <h3 class="text-lg font-bold text-white">Open World Tutorial</h3>
+                    <p class="text-sm text-gray-300">Directed tutorial showcasing world navigation & design principles.</p>
+                </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                <button onclick="openGameModal('Open World Tutorial','A directed tutorial project exploring game world navigation and design principles.','assets/img/openworld-thumb.jpg')"
+                        class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
+                <a href="https://www.youtube.com/watch?v=ndZnoE38mmM&list=PLJqgAlQY92wCnQ8HqS0sJWbVB6EKedSqk" target="_blank" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Watch</a>
+                </div>
+            </article>
+            </div>
+        </div>
+        </section>
+
+        <!-- ART & MEDIA -->
+        <section id="art" class="py-20 bg-gray-950">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-6 fade-item opacity-0 translate-y-6 transition duration-700">Art & Media</h2>
+                <p class="text-gray-400 mb-8 max-w-3xl">A collection of my 2D, 3D, and music works — showcasing creativity across visual and auditory design.</p>
+
+                <!-- CATEGORY FILTER -->
+                <div class="flex flex-wrap gap-3 mb-10">
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-cyan-600 text-white text-sm font-medium" data-category="all">All</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-category="3d">3D</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-category="2d">2D</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-category="music">Music</button>
+                </div>
+
+                <!-- ART GRID -->
+                <div id="art-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- 3D Example -->
+                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                            data-category="3d" 
+                            onclick="openArtModal([
+                                'assets/art/Final%20Output.jpg',
+                                'assets/art/info.png',
+                                'assets/art/W_Back.png',
+                                'assets/art/W_Front.png',
+                                'assets/art/W_Left.png',
+                                'assets/art/W_Right.png',
+                                'assets/art/lady.png'
+                            ], '3D Character Model — Selene Wasserglut')">
+                        <img src="assets/art/Final Output.jpg" alt="3D Model" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left">
+                            <p class="text-sm text-gray-300">3D Character Model — Selene</p>
+                        </div>
+                    </button>
+
+                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                            data-category="3d" 
+                            onclick="openArtModal([
+                                'assets/art/OBENARIO_SCIFI_WEAPON.png'], '3D Model — Scifi Spear')">
+                        <img src="assets/art/OBENARIO_SCIFI_WEAPON.png" alt="3D Model" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left">
+                            <p class="text-sm text-gray-300">3D Model — Scifi Spear</p>
+                        </div>
+                    </button>
+
+                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                            data-category="3d" 
+                            onclick="openArtModal([
+                                'assets/art/wol.png'], '3D Model — Wall Trim')">
+                        <img src="assets/art/wol.png" alt="3D Model" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left">
+                            <p class="text-sm text-gray-300">3D Model — Wall Trim</p>
+                        </div>
+                    </button>
+
+                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                            data-category="3d" 
+                            onclick="openArtModal([
+                                'assets/art/WashingMachine.png',
+                                'assets/art/1a.jpg',
+                                'assets/art/2a.jpg',
+                                'assets/art/3a.jpg',
+                                'assets/art/1b.png',
+                                'assets/art/2b.png',
+                                'assets/art/3b.png',
+                                'assets/art/4.jpg',
+                                'assets/art/NormalMap.png'], '3D Model — Baked Washing Machine')">
+                        <img src="assets/art/WashingMachine.png" alt="3D Model" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left">
+                            <p class="text-sm text-gray-300">3D Model — Baked Washing Machine</p>
+                        </div>
+                    </button>
+
+                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                            data-category="3d" 
+                            onclick="openArtModal([
+                                'assets/art/other1.png',
+                                'assets/art/other2.png'], '3D Scene — Scifi Scene')">
+                        <img src="assets/art/other1.png" alt="3D Model" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left">
+                            <p class="text-sm text-gray-300">3D Scene — Scifi Scene</p>
+                        </div>
+                    </button>
+
+                    <!-- 2D Example with multiple images -->
+                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                            data-category="2d" 
+                            onclick="openArtModal([
+                                'assets/art/r1.png',
+                                'assets/art/r2.png',
+                                'assets/art/r3.jpg',
+                                'assets/art/r4.png',
+                                'assets/art/r5.png',
+                                'assets/art/r0.png',
+                                ], '2D — Traditional Drawings')">
+                        <img src="assets/art/r0.png" alt="2D" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left">
+                            <p class="text-sm text-gray-300">2D — Traditional Drawings</p>
+                        </div>
+                    </button>
+
+                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                            data-category="2d" 
+                            onclick="openArtModal([
+                                'assets/art/d1.png',
+                                'assets/art/d2.png',
+                                'assets/art/d3.png',
+                                'assets/art/d4.png'
+                                ], '2D — Digital Drawings')">
+                        <img src="assets/art/d4.png" alt="2D" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left">
+                            <p class="text-sm text-gray-300">2D — Digital Drawings</p>
+                        </div>
+                    </button>
+
+                    <!-- Music Example -->
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “Alice's Dilemma (Who are we?)”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/usurpers/Battle Theme 1(Alice's Theme, Who are we).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “Margaux's Battle Theme (La Moisson Nocturne)”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/usurpers/Battle Theme 2 (Margaux's Battle Theme La Moisson Nocturne).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “Shiori's Battle Theme (The Voyager 2)”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/usurpers/Battle Theme 3(Shiori's Battle Theme, The Voyager 2).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “The Voyager 1 (Final Amargo)”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/usurpers/Battle Theme 3 2nd Part(The Voyager 1, Final Amargo).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “Sibling's Conflict (The Curator)”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/usurpers/The Curator's Battle Theme (The Sibling's Conflict).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “Main Theme (The Puer)”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/usurpers/Main Theme(Puer's Theme, The Red Skies We Saw).mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “The Puer LoFi Version”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/usurpers/Main Theme(Puer's Theme, The Red Skies We Saw) LoFi Version.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “Sommerschlaf Waltz (Summer Break)”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/usurpers/Sommerschlaf Waltz Orignal Version.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage — “Nihility”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/tpr/Nihility.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage — “Kung Fury”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/tpr/Kung_Fury_Boss_Theme.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage — “Fury's Requiem”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/tpr/Fury's Requiem.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                    
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage — “Der Führers Widerstand”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/tpr/Der Führers Widerstand.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">The Forge Of Destiny — “A Destiny To Forge”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/tfd/A Destiny To Forge.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage — “A Simple Melody, A Short Farewell”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/tfd/A Simple Melody, A Short Farewell.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage — “Against All Adversity”</h3>
+                            <p class="text-gray-400 text-sm mt-1">Original OST</p>
+                        </div>
+                        <div class="p-4">
+                            <audio controls class="w-full">
+                                <source src="assets/music/tfd/Against All Adversity.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATES -->
+        <section id="certificates" class="py-20 bg-gray-950">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-6 fade-item opacity-0 translate-y-6 transition duration-700">Certificates</h2>
+            <p class="text-gray-400 mb-8">A few of my certifications and course completions.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Certificate 1 -->
+            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/21a46f59-e7c2-419f-93a9-b6a8a8062933.png','Certificate - Java')">
+                <img src="assets/certs/21a46f59-e7c2-419f-93a9-b6a8a8062933.png" alt="Certificate 1" class="w-full h-44 object-cover">
+                <div class="p-3 text-left">
+                <p class="text-sm text-gray-300">Certificate - Java</p>
+                </div>
+            </button>
+
+            <!-- Certificate 2 -->
+            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/adce3c8d-0c9d-4c90-a0fd-39bc4c7e08e1 (1).png','Certificate - HTML')">
+                <img src="assets/certs/adce3c8d-0c9d-4c90-a0fd-39bc4c7e08e1 (1).png" alt="Certificate 2" class="w-full h-44 object-cover">
+                <div class="p-3 text-left">
+                <p class="text-sm text-gray-300">Certificate - HTML</p>
+                </div>
+            </button>
+
+            <!-- Certificate 3 -->
+            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/4e145174-2a94-4e6d-a867-9316c60233db.png','Certificate - CSS')">
+                <img src="assets/certs/4e145174-2a94-4e6d-a867-9316c60233db.png" alt="Certificate 3" class="w-full h-44 object-cover">
+                <div class="p-3 text-left">
+                <p class="text-sm text-gray-300">Certificate - CSS</p>
+                </div>
+                
+            <!-- Certificate 4 -->  
+            </button>
+            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/cert3.jpg','Certificate - Autodesk Maya')">
+                <img src="assets/certs/cert3-thumb.jpg" alt="Certificate 3" class="w-full h-44 object-cover">
+                <div class="p-3 text-left">
+                <p class="text-sm text-gray-300">Certificate - Autodesk Maya (Soon!)</p>
+                </div>
+            </button>
+
+            <!-- Certificate 5 -->  
+            </button>
+            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/cert3.jpg','Certificate - C#')">
+                <img src="assets/certs/cert3-thumb.jpg" alt="Certificate 3" class="w-full h-44 object-cover">
+                <div class="p-3 text-left">
+                <p class="text-sm text-gray-300">Certificate - C# (Soon!)</p>
+                </div>
+            </button>
+
+            <!-- Certificate 6 -->  
+            </button>
+            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/3EC0FDF5-8282-411D-ABD9-279587D3E934.png','Certificate - TOPCIT IT Competency Certificate')">
+                <img src="assets/certs/3EC0FDF5-8282-411D-ABD9-279587D3E934.png" alt="Certificate 3" class="w-full h-44 object-cover">
+                <div class="p-3 text-left">
+                <p class="text-sm text-gray-300">Certificate - TOPCIT LEVEL 3 IT (Soon to be Level 4 or 5!)</p>
+                </div>
+            </button>
+
+            </div>
+        </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="py-20 bg-gray-900">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <div class="fade-item opacity-0 translate-y-6 transition duration-700">
+            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-4">Get in Touch</h2>
+            <p class="text-gray-300 mb-8">Feel free to reach out if you'd like to collaborate, ask about my work, or just say hi.</p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:aldreckdegurechaff@gmail.com" class="flex items-center gap-2 px-5 py-3 bg-cyan-500 hover:bg-cyan-600 rounded-full text-white transition">
+                <!-- mail icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0l-8-8m8 8l-8 8"/>
+                </svg>
+                Email
+                </a>
+
+                <a href="https://www.linkedin.com/in/dreckkku/" target="_blank" class="flex items-center gap-2 px-5 py-3 border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-gray-900 rounded-full transition">
+                <!-- linkedin icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762
+                    0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268
+                    c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783
+                    1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.062
+                    -1.867-3.062-1.869 0-2.155 1.46-2.155 2.968v5.698h-3v-10h2.881v1.367h.041c.401-.76
+                    1.379-1.561 2.841-1.561 3.04 0 3.6 2.003 3.6 4.606v5.588z"/>
+                </svg>
+                LinkedIn
+                </a>
+
+                <button onclick="alertSoon('GitHub')" class="flex items-center gap-2 px-5 py-3 border border-gray-700 text-gray-300 hover:bg-gray-800 rounded-full transition">
+                <!-- github icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 .5C5.648.5.5 5.648.5 12c0 5.086 3.292 9.397 7.865 10.916.575.107.786-.25.786-.556
+                    0-.274-.01-1-.016-1.964-3.197.695-3.872-1.54-3.872-1.54-.524-1.33-1.281-1.684-1.281-1.684-1.047-.716.08-.701.08-.701
+                    1.158.082 1.769 1.19 1.769 1.19 1.03 1.766 2.705 1.256 3.367.961.104-.746.403-1.256.733-1.545-2.55-.29-5.231-1.275-5.231-5.674
+                    0-1.254.448-2.28 1.183-3.084-.119-.29-.512-1.456.113-3.037 0 0 .964-.308 3.162 1.176.916-.255
+                    1.9-.383 2.878-.388.977.005 1.961.133 2.878.388 2.198-1.484 3.161-1.176 3.161-1.176.626 1.581.233 2.747.114
+                    3.037.736.804 1.182 1.83 1.182 3.084 0 4.41-2.685 5.381-5.244 5.664.414.356.783 1.057.783 2.132
+                    0 1.54-.014 2.781-.014 3.161 0 .308.208.667.792.554C20.713 21.393 24 17.084 24 12
+                    24 5.648 18.852.5 12 .5z"/>
+                </svg>
+                GitHub
+                </button>
+
+                <button onclick="alertSoon('Itch.io')" class="flex items-center gap-2 px-5 py-3 border border-gray-700 text-gray-300 hover:bg-gray-800 rounded-full transition">
+                <!-- itch icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M2 3h20l2 18-12-5-12 5 2-18zm2 2v12.17l8-3.34 8 3.34v-12.17h-16z"/>
+                </svg>
+                Itch.io
+                </button>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="py-8 bg-gray-950">
+            <div class="max-w-6xl mx-auto px-6 text-center text-gray-500">
+                © <span id="year"></span> Aldreck Obenario — Built with Tailwind • Contact: <a href="mailto:aldreckdegurechaff@gmail.com" class="text-cyan-400">aldreckdegurechaff@gmail.com</a>
+            </div>
+        </footer>
+    </main>
+
+    <!-- GAME DETAIL MODAL -->
+    <div id="gameModal" class="fixed inset-0 hidden items-center justify-center z-50 modal-backdrop px-4">
+        <div class="bg-gray-900 rounded-2xl shadow-xl max-w-3xl w-full overflow-hidden">
+        <div class="flex items-center justify-between p-4 border-b border-gray-800">
+            <h3 id="gameModalTitle" class="text-lg font-bold text-white"></h3>
+            <button onclick="closeGameModal()" class="text-gray-400 hover:text-white p-2">✕</button>
+        </div>
+
+        <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <img id="gameModalImg" src="" alt="" class="w-full h-44 object-cover rounded-lg md:col-span-1">
+            <div class="md:col-span-2">
+            <p id="gameModalDesc" class="text-gray-300 mb-4"></p>
+            <div class="flex gap-3">
+                <a id="gameModalDownload" href="#" class="px-4 py-2 bg-cyan-500 text-white rounded-full">Download</a>
+                <a id="gameModalExtra" href="#" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full">More</a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- CERT LIGHTBOX -->
+    <div id="certModal" class="fixed inset-0 hidden items-center justify-center z-50 modal-backdrop px-4">
+    <div class="bg-gray-900 rounded-lg shadow-xl max-w-4xl w-full overflow-hidden">
+        <div class="flex items-center justify-between p-3 border-b border-gray-800">
+        <h4 id="certModalTitle" class="text-white font-semibold">Certificate</h4>
+        <button onclick="closeCert()" class="text-gray-400 hover:text-white p-2">✕</button>
+        </div>
+        <div class="p-4 flex justify-center items-center">
+        <img 
+            id="certModalImg" 
+            src="" 
+            alt="Certificate" 
+            class="max-h-[80vh] w-auto object-contain rounded transition-all duration-200"
+        >
+        </div>
+    </div>
+    </div>
+
+    <!-- ART MODAL -->
+    <div id="artModal" class="fixed inset-0 hidden items-center justify-center z-50 modal-backdrop px-4 bg-black/70">
+        <div id="artModalContentWrapper" class="bg-gray-900 rounded-lg shadow-xl max-w-5xl w-full overflow-hidden relative">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-3 border-b border-gray-800">
+                <h4 id="artModalTitle" class="text-white font-semibold">Art</h4>
+                <button onclick="closeArtModal()" class="text-gray-400 hover:text-white p-2">✕</button>
+            </div>
+
+            <!-- Carousel Content -->
+            <div id="artModalContent" class="p-4 flex justify-center items-center">
+                <img id="artModalImage" src="" alt="Art" class="max-h-[70vh] max-w-full object-contain rounded shadow">
+            </div>
+
+            <!-- Navigation -->
+            <button id="prevArt" class="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-1 rounded">‹</button>
+            <button id="nextArt" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-1 rounded">›</button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Simple UI plumbing
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fade-in on scroll (for elements with .fade-item)
+        const faders = document.querySelectorAll('.fade-item');
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0', 'translate-y-6');
+            entry.target.classList.add('opacity-100');
+            }
+        });
+        }, { threshold: 0.15 });
+
+        faders.forEach(el => observer.observe(el));
+
+        // Another selector used earlier: .fade-item (title) and .fade-section used previously
+        document.querySelectorAll('.fade-section, .fade-item').forEach(el => {
+        el.classList.add('opacity-0','translate-y-6');
+        observer.observe(el);
+        });
+
+        // Update footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Game modal functions
+        function openGameModal(title, desc, imgSrc) {
+        document.getElementById('gameModalTitle').textContent = title;
+        document.getElementById('gameModalDesc').textContent = desc;
+        document.getElementById('gameModalImg').src = imgSrc;
+        document.getElementById('gameModal').classList.remove('hidden');
+        document.getElementById('gameModal').classList.add('flex');
+        }
+        function closeGameModal() {
+        document.getElementById('gameModal').classList.add('hidden');
+        document.getElementById('gameModal').classList.remove('flex');
+        }
+
+        // Certificates lightbox
+        function openCert(src, title = 'Certificate') {
+        document.getElementById('certModalImg').src = src;
+        document.getElementById('certModalTitle').textContent = title;
+        document.getElementById('certModal').classList.remove('hidden');
+        document.getElementById('certModal').classList.add('flex');
+        }
+        function closeCert() {
+        document.getElementById('certModal').classList.add('hidden');
+        document.getElementById('certModal').classList.remove('flex');
+        }
+
+        // Art Modal (supports multiple images)
+        let artImages = []; // holds current images
+        let currentArtIndex = 0; // current image index
+
+        function openArtModal(images, title = 'Art') {
+            if (!images || images.length === 0) return;
+
+            artImages = images;
+            currentArtIndex = 0;
+
+            document.getElementById('artModalTitle').textContent = title;
+            document.getElementById('artModalImage').src = artImages[currentArtIndex];
+
+            const modal = document.getElementById('artModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // Close modal
+        function closeArtModal() {
+            const modal = document.getElementById('artModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Next/Prev Navigation
+        document.getElementById('nextArt').addEventListener('click', () => {
+            if (artImages.length === 0) return;
+            currentArtIndex = (currentArtIndex + 1) % artImages.length;
+            document.getElementById('artModalImage').src = artImages[currentArtIndex];
+        });
+
+        document.getElementById('prevArt').addEventListener('click', () => {
+            if (artImages.length === 0) return;
+            currentArtIndex = (currentArtIndex - 1 + artImages.length) % artImages.length;
+            document.getElementById('artModalImage').src = artImages[currentArtIndex];
+        });
+
+        // Close modal on backdrop click
+        document.getElementById('artModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('artModal')) closeArtModal();
+        });
+
+        // Close on Escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeArtModal();
+        });
+
+        // Placeholder for coming soon sites
+        function alertSoon(name) {
+        // nicer non-blocking toast alternative could be added later; keeping simple for now
+        alert(`${name} profile will be added soon!`);
+        }
+
+        // Close modals on backdrop click
+        window.addEventListener('click', (e) => {
+            const gm = document.getElementById('gameModal');
+            const cm = document.getElementById('certModal');
+            const am = document.getElementById('artModal'); 
+
+            if (gm && !gm.classList.contains('hidden') && e.target === gm) closeGameModal();
+            if (cm && !cm.classList.contains('hidden') && e.target === cm) closeCert();
+            if (am && !am.classList.contains('hidden') && e.target === am) closeArtModal();
+        });
+
+        // keyboard escape to close modals
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeGameModal();
+                closeCert();
+                closeArtModal();
+            }
+        });
+
+
+        // Filter buttons
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const artItems = document.querySelectorAll('.art-item');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+            const category = btn.getAttribute('data-category');
+            filterButtons.forEach(b => b.classList.remove('bg-cyan-600', 'text-white'));
+            btn.classList.add('bg-cyan-600', 'text-white');
+
+            artItems.forEach(item => {
+                item.style.display = (category === 'all' || item.dataset.category === category) ? 'block' : 'none';
+            });
+            });
+        });
+    </script>
+    </body>
+</html>
