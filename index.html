@@ -110,17 +110,20 @@
                     </div>
         
                     <!-- YOUTUBE VIDEO EMBED -->
-                    <div class="flex justify-center">
-                        <div class="w-full max-w-2xl aspect-video">
-                            <iframe 
-                                class="w-full h-full rounded-xl ring-2 ring-cyan-500 shadow-lg"
-                                src="https://www.youtube.com/watch?v=H5vMvBB0UFE"
-                                title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
+                    <div class="mt-10 flex justify-center">
+                      <a href="https://www.youtube.com/watch?v=H5vMvBB0UFE" target="_blank" rel="noopener noreferrer" class="block max-w-2xl">
+                        <div class="relative aspect-video rounded-xl overflow-hidden shadow-lg ring-2 ring-cyan-500">
+                          <img src="https://img.youtube.com/vi/H5vMvBB0UFE/maxresdefault.jpg" alt="Video thumbnail" class="w-full h-full object-cover">
+                          <!-- Play button -->
+                          <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-white bg-opacity-80 rounded-full p-4">
+                              <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5v14l11-7L8 5z" fill="currentColor"/>
+                              </svg>
+                            </div>
+                          </div>
                         </div>
+                      </a>
                     </div>
         
                 </div>
@@ -923,6 +926,7 @@
     </body>
 
 </html>
+
 
 
 
