@@ -3,30 +3,147 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Aldreck Obenario — Portfolio</title>
+        <title>Aldreck Obenario - Portfolio</title>
+        <link rel="icon" type="image/png" href="assets/img/Grandeur.png" />
 
         <!-- Tailwind CDN -->
         <script src="https://cdn.tailwindcss.com"></script>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        <style>
-            :root { color-scheme: dark; }
-            body { font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-            /* small custom transitions not in tailwind */
+                <style>
+            :root {
+                color-scheme: dark;
+                --c1: #F67280;
+                --c2: #C06C84;
+                --c3: #6C5B7B;
+                --c4: #355C7D;
+                --bg-deep: #130f1d;
+                --bg-soft: #1c1730;
+                --text-main: #f6eef3;
+                --text-muted: #c9b9cb;
+            }
+
+            body {
+                font-family: 'Rajdhani', system-ui, -apple-system, 'Segoe UI', sans-serif;
+                background: radial-gradient(circle at top right, rgba(246,114,128,0.12), transparent 40%), linear-gradient(145deg, var(--bg-deep), #17132a 45%, #111421);
+                color: var(--text-main);
+            }
+
+            h1, h2, h3, .display-font {
+                font-family: 'Cinzel', Georgia, serif;
+                letter-spacing: 0.02em;
+            }
+
             .translate-y-6 { transform: translateY(1.5rem); }
-            .modal-backdrop { background: rgba(2,6,23,0.7); backdrop-filter: blur(6px); }
+            .modal-backdrop { background: rgba(8, 6, 20, 0.78); backdrop-filter: blur(8px); }
+            .hero-image-shell { will-change: transform, opacity, filter; transform-origin: center center; }
+            .hero-stage {
+                position: relative;
+                overflow: hidden;
+                border-bottom: 1px solid rgba(246,114,128,0.2);
+                background-image:
+                    linear-gradient(110deg, rgba(10,8,20,0.92) 18%, rgba(15,12,30,0.66) 56%, rgba(53,92,125,0.45) 100%),
+                    url('assets/img/usurpers-thumb.png');
+                background-size: cover;
+                background-position: center top;
+            }
+
+            .hero-stage::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: radial-gradient(circle at 72% 30%, rgba(246,114,128,0.25), transparent 45%);
+                pointer-events: none;
+            }
+
+            .brand-highlight { color: var(--c1) !important; }
+            .section-heading { color: var(--c2) !important; }
+            .section-title { color: var(--c2) !important; font-family: 'Cinzel', Georgia, serif; letter-spacing: 0.02em; }
+            .text-cyan-400 { color: var(--c1) !important; }
+            .text-cyan-300 { color: #f8b4bf !important; }
+            .text-gray-300 { color: #eadce8 !important; }
+            .bg-cyan-500 { background-color: var(--c4) !important; }
+            .hover\:bg-cyan-500:hover { background-color: var(--c2) !important; }
+            .hover\:bg-cyan-600:hover { background-color: var(--c3) !important; }
+            .hover\:text-cyan-400:hover { color: var(--c1) !important; }
+            .hover\:text-gray-900:hover { color: #120f20 !important; }
+            .border-cyan-500 { border-color: var(--c2) !important; }
+            .border-cyan-500\/30 { border-color: rgba(192,108,132,0.30) !important; }
+            .border-cyan-500\/40 { border-color: rgba(192,108,132,0.40) !important; }
+            .border-cyan-500\/60 { border-color: rgba(192,108,132,0.60) !important; }
+            .ring-cyan-500\/70 { --tw-ring-color: rgba(192,108,132,0.70) !important; }
+            .ring-cyan-500 { --tw-ring-color: var(--c2) !important; }
+            .text-gray-400 { color: var(--text-muted) !important; }
+            .bg-gray-900\/80 { background-color: rgba(16, 14, 33, 0.8) !important; }
+            .bg-gray-900\/95 { background-color: rgba(16, 14, 33, 0.95) !important; }
+            .bg-gray-950 { background-color: transparent !important; }
+            .bg-gray-900 { background-color: rgba(53,92,125,0.12) !important; }
+            .bg-gray-800 { background-color: rgba(108,91,123,0.26) !important; }
+            .bg-gray-800\/70 { background-color: rgba(108,91,123,0.70) !important; }
+            .border-gray-800 { border-color: rgba(246,114,128,0.16) !important; }
+            .border-gray-700 { border-color: rgba(246,114,128,0.3) !important; }
+            .hover\:bg-gray-800:hover { background-color: rgba(192,108,132,0.25) !important; }
+            .hover\:bg-gray-700:hover { background-color: rgba(192,108,132,0.45) !important; }
+
+            
+            .media-shell {
+                border: 1px solid rgba(192,108,132,0.24);
+                background: linear-gradient(160deg, rgba(23,19,37,0.88), rgba(16,14,33,0.88));
+                box-shadow: 0 20px 40px rgba(9, 8, 20, 0.34);
+            }
+
+            .media-toolbar {
+                border: 1px solid rgba(192,108,132,0.28);
+                background: rgba(19, 15, 29, 0.65);
+            }
+
+            .media-card {
+                border: 1px solid rgba(192,108,132,0.16);
+            }
+
+            .media-card:hover {
+                border-color: rgba(246,114,128,0.44);
+            }
+
+            .ui-particle-canvas {
+                position: fixed;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1;
+                opacity: 0.36;
+            }
+
+            a,
+            button,
+            .media-card,
+            .group {
+                transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, border-color 220ms ease, color 220ms ease, opacity 220ms ease;
+            }
+
+            a:hover,
+            button:hover {
+                transform: translateY(-1px);
+            }
+
+            .media-card:hover,
+            .group:hover {
+                box-shadow: 0 12px 24px rgba(9, 8, 20, 0.28);
+            }
         </style>
     </head>
     <body class="bg-gray-950 text-gray-100 antialiased">
+    <canvas id="fxParticles" class="ui-particle-canvas" aria-hidden="true"></canvas>
 
     <!-- NAVBAR -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-sm border-b border-gray-800">
         <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <a href="#hero" class="flex items-center gap-3">
             <span class="text-2xl font-bold text-cyan-400">Aldreck</span>
-            <span class="text-sm text-gray-400 hidden sm:inline"> — Game Dev • Aspiring Game Designer • Composer • 3D</span>
+            <span class="text-sm text-gray-400 hidden sm:inline">Game Dev - Aspiring Game Designer - Composer - 3D</span>
         </a>
 
         <ul class="hidden md:flex items-center space-x-6 text-gray-300">
@@ -57,75 +174,125 @@
         </div>
     </header>
 
-    <main class="pt-80">
+    <main class="pt-24">
 
-        <!-- HERO -->
-        <section id="hero" class="min-h-[60vh] flex items-center justify-center text-center px-6">
-        <div class="max-w-4xl">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4">Hi, I’m <span class="text-cyan-400">Aldreck Paul!</span></h1>
-            <p class="text-gray-400 text-lg md:text-xl mb-8">
-            Hello welcome to my portfolio!
-            I am an IT Student Specializing in Animation & Game Development. 
-            I make worlds, write lore, compose music, and make game systems.
-            </p>
+                        <!-- HERO -->
+        <section id="hero" class="hero-stage min-h-[calc(100vh-5rem)] flex items-start px-6 pt-8 md:pt-12">
+            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
+                <div class="order-2 lg:order-1 text-center lg:text-left hero-copy rounded-2xl p-6 md:p-8">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I am <span class="brand-highlight">Aldreck Paul</span></h1>
+                    <p class="text-gray-400 text-lg md:text-xl mb-8 max-w-2xl">
+                    IT student focused on animation and game development, blending story design, systems, music, and visual worldbuilding into playable experiences.
+                    </p>
 
-            <div class="flex flex-wrap justify-center gap-4">
-            <a href="#games" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 rounded-full text-white transition">View My Games</a>
-            <a href="#art" class="px-6 py-3 border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-gray-900 rounded-full transition">View My Art & Music!</a>
-            <a href="#thesis" class="px-6 py-3 border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-gray-900 rounded-full transition">View My Thesis & Other Documents!</a>
-            <a href="#about" class="px-6 py-3 border border-gray-700 text-gray-300 hover:bg-gray-800 rounded-full transition">About Me</a>
-            <a href="#certificates" class="px-6 py-3 border border-gray-700 text-gray-300 hover:bg-gray-800 rounded-full transition">Certificates</a>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                    <a href="#games" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 rounded-full text-white transition">View My Games</a>
+                    <a href="#art" class="px-6 py-3 border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-gray-900 rounded-full transition">Art & Music</a>
+                    <a href="#thesis" class="px-6 py-3 border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-gray-900 rounded-full transition">Thesis Docs</a>
+                    <a href="#about" class="px-6 py-3 border border-gray-700 text-gray-300 hover:bg-gray-800 rounded-full transition">My Profile</a>
+                    </div>
+
+                    <div class="mt-10 text-gray-400 animate-bounce">
+                    <a href="#about">Scroll</a>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <div id="heroImageShell" class="hero-image-shell relative max-w-[17rem] md:max-w-[19rem] mx-auto">
+                        <div class="absolute -inset-5 bg-[#F67280]/25 blur-3xl rounded-full"></div>
+                        <img
+                            id="heroImage"
+                            src="assets/img/aldreck.png"
+                            alt="Aldreck portrait"
+                            class="relative w-full aspect-square object-cover rounded-3xl border border-cyan-500/60 shadow-2xl"
+                        >
+                    </div>
+                </div>
             </div>
-
-            <div class="mt-12 text-gray-500 animate-bounce">
-            <a href="#about">↓ Scroll</a>
-            </div>
-        </div>
         </section>
 
-        <!-- ABOUT -->
-        <section id="about" class="py-20 bg-gray-950">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <div class="fade-item opacity-0 translate-y-6 transition duration-700">
-        
-                    <img src="assets/img/aldreck.png" alt="Aldreck" class="w-56 h-56 rounded-full mx-auto mb-6 ring-4 ring-cyan-500 object-cover shadow-xl">
-        
-                    <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-4">About Me</h2>
-        
-                    <p class="text-gray-300 leading-relaxed text-lg mb-6">
-                        Hello! My name is Aldreck, and I’m an IT student specializing in Animation and Game Development.
-                        I consider myself a jack of all trades currently exploring which area of the game industry I want to master.
-                        When developing games, I take on creative and technical roles that let me use my strengths in game design, lore crafting,
-                        and music composition, while also applying my skills in programming and art.
-                        I’m passionate about building worlds, telling stories, and bringing ideas to life.
-                    </p>
-        
-                    <div class="flex flex-wrap justify-center gap-3 mb-10">
-                        <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Unity (C#)</span>
-                        <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Autodesk Maya</span>
-                        <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Game Design</span>
-                        <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Music Composition</span>
-                        <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">2D / 3D Art</span>
-                        <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Frontend Dev</span>
-                    </div>
-        
-                    <!-- YOUTUBE VIDEO EMBED -->
-                    <div class="mt-10 flex justify-center">
-                      <a href="https://www.youtube.com/watch?v=H5vMvBB0UFE" target="_blank" rel="noopener noreferrer" class="block max-w-2xl">
-                        <div class="relative aspect-video rounded-xl overflow-hidden shadow-lg ring-2 ring-cyan-500">
-                          <img src="https://img.youtube.com/vi/H5vMvBB0UFE/maxresdefault.jpg" alt="Video thumbnail" class="w-full h-full object-cover">
-                          <!-- Play button -->
-                          <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="bg-white bg-opacity-80 rounded-full p-4">
-                              <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 5v14l11-7L8 5z" fill="currentColor"/>
-                              </svg>
+                <!-- ABOUT -->
+        <section id="about" class="py-20">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch fade-item opacity-0 translate-y-6 transition duration-700">
+                    <article class="lg:col-span-2 rounded-2xl border border-cyan-500/30 bg-[#1a162a]/85 p-6 backdrop-blur-sm">
+                        <h2 class="text-3xl md:text-4xl section-heading mb-5">About Me</h2>
+                        <p class="text-gray-300 leading-relaxed text-lg mb-6">
+                            I build game experiences from concept to playable prototype. My work combines system design, storytelling, music composition, and 2D/3D production with implementation in Unity and C#.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed mb-6">                            Current OJT: Lamina Studios, contributing to projects under Pixel Rock and Omen IV as part of multidisciplinary Unreal Engine production.`r`n                        </p>
+                        <div class="grid grid-cols-3 gap-3 text-center mb-6">
+                            <div class="rounded-xl border border-cyan-500/40 bg-black/20 py-3">
+                                <p class="text-2xl font-bold text-cyan-300">6+</p>
+                                <p class="text-xs text-gray-400">Projects</p>
                             </div>
-                          </div>
+                            <div class="rounded-xl border border-cyan-500/40 bg-black/20 py-3">
+                                <p class="text-2xl font-bold text-cyan-300">4</p>
+                                <p class="text-xs text-gray-400">Core Roles</p>
+                            </div>
+                            <div class="rounded-xl border border-cyan-500/40 bg-black/20 py-3">
+                                <p class="text-2xl font-bold text-cyan-300">1</p>
+                                <p class="text-xs text-gray-400">Thesis Game</p>
+                            </div>
                         </div>
-                      </a>
-                    </div>
-        
+                    </article>
+
+                    <article class="lg:col-span-3 rounded-2xl border border-cyan-500/30 bg-[#171325]/90 p-6 md:p-8">
+                        <h3 class="text-2xl section-heading mb-5">Current Focus Areas</h3>
+                        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                            <div class="rounded-xl border border-cyan-500/30 bg-[#221a35]/70 p-4">
+                                <h4 class="text-lg text-cyan-300 font-semibold mb-2">Game Systems</h4>
+                                <p class="text-gray-300">Combat loops, progression logic, and encounter structure for replayable gameplay.</p>
+                            </div>
+                            <div class="rounded-xl border border-cyan-500/30 bg-[#221a35]/70 p-4">
+                                <h4 class="text-lg text-cyan-300 font-semibold mb-2">Lore & Narrative</h4>
+                                <p class="text-gray-300">Faction design, world rules, and story hooks that support player motivation.</p>
+                            </div>
+                            <div class="rounded-xl border border-cyan-500/30 bg-[#221a35]/70 p-4">
+                                <h4 class="text-lg text-cyan-300 font-semibold mb-2">Art Direction</h4>
+                                <p class="text-gray-300">Stylized 2D/3D visuals aligned to mood, readability, and gameplay clarity.</p>
+                            </div>
+                            <div class="rounded-xl border border-cyan-500/30 bg-[#221a35]/70 p-4">
+                                <h4 class="text-lg text-cyan-300 font-semibold mb-2">Music Composition</h4>
+                                <p class="text-gray-300">Theme-driven composition and ambience that reinforce scene and pacing.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Unity (C#)</span>
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Unreal Engine</span>
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Autodesk Maya</span>
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Game Design</span>
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Music Composition</span>
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">2D / 3D Art</span>
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Frontend Dev</span>
+                        </div>
+
+                        <div class="block max-w-2xl">
+                            <div class="relative aspect-video rounded-xl overflow-hidden shadow-lg ring-2 ring-cyan-500/70">
+                                <iframe
+                                    id="aboutVideoFrame"
+                                    class="w-full h-full"
+                                    src="https://www.youtube-nocookie.com/embed/H5vMvBB0UFE?rel=0&modestbranding=1&playsinline=1"
+                                    title="YouTube video player"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    loading="lazy"
+                                    allowfullscreen>
+                                </iframe>
+                                <button
+                                    id="aboutVideoThumb"
+                                    type="button"
+                                    class="hidden absolute inset-0"
+                                    onclick="window.open('https://www.youtube.com/watch?v=H5vMvBB0UFE','_blank')"
+                                >
+                                    <img src="https://img.youtube.com/vi/H5vMvBB0UFE/maxresdefault.jpg" alt="Video thumbnail" class="w-full h-full object-cover">
+                                    <span class="absolute inset-0 flex items-center justify-center bg-black/35">
+                                        <span class="bg-white/90 text-black font-semibold px-4 py-2 rounded-full">Play Video</span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -182,7 +349,7 @@
         <section id="games" class="py-20 bg-gray-900">
             <div class="max-w-6xl mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-6 fade-item opacity-0 translate-y-6 transition duration-700">Games</h2>
-                <p class="text-gray-400 mb-8 max-w-3xl">A selection of projects — from jam builds to full prototypes and tutorials.</p>
+                <p class="text-gray-400 mb-8 max-w-3xl">A selection of projects  - from jam builds to full prototypes and tutorials.</p>
         
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
@@ -277,6 +444,52 @@
                         <a href="https://www.youtube.com/watch?v=ndZnoE38mmM&list=PLJqgAlQY92wCnQ8HqS0sJWbVB6EKedSqk" target="_blank" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Watch</a>
                     </div>
                 </article>
+
+                <!-- Card 5: Cold Light -->
+                <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="assets/img/ColdLight.png" alt="Cold Light" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute left-4 bottom-4">
+                            <h3 class="text-lg font-bold text-white">Cold Light (Pixel Rock)</h3>
+                            <p class="text-sm text-gray-300">Sound Designer & Musician  -  Unreal Engine  -  Coming Soon.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 flex items-center justify-between">
+                        <button onclick="openGameModal(
+                            'Cold Light (Pixel Rock)',
+                            'OJT project at Lamina Studios. Role: Sound Designer & Musician. Built in Unreal Engine. Status: Coming Soon.',
+                            'assets/img/ColdLight.png',
+                            '#'
+                        )"
+                        class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
+
+                        <span class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm">Coming Soon</span>
+                    </div>
+                </article>
+
+                <!-- Card 6: Size Matters -->
+                <article class="group bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform transition hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="assets/img/SizeMatters.png" alt="Size Matters" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute left-4 bottom-4">
+                            <h3 class="text-lg font-bold text-white">Size Matters (Omen IV)</h3>
+                            <p class="text-sm text-gray-300">Game Designer, Technical Artist, Musician, minor programming  -  Unreal Engine.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 flex items-center justify-between">
+                        <button onclick="openGameModal(
+                            'Size Matters (Omen IV)',
+                            'OJT project at Lamina Studios. Roles: Game Designer, Technical Artist, Musician, and minor programming. Built in Unreal Engine.',
+                            'assets/img/SizeMatters.png',
+                            '#'
+                        )"
+                        class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
+
+                        <span class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm">OJT Project</span>
+                    </div>
+                </article>
         
                 </div>
             </div>
@@ -284,22 +497,25 @@
 
         <!-- ART & MEDIA -->
         <section id="art" class="py-20 bg-gray-950">
-            <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-6xl mx-auto px-6 media-shell rounded-2xl p-6 md:p-8">
                 <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-6 fade-item opacity-0 translate-y-6 transition duration-700">Art & Media</h2>
-                <p class="text-gray-400 mb-8 max-w-3xl">A collection of my 2D, 3D, and music works — showcasing creativity across visual and auditory design.</p>
+                <p class="text-gray-400 mb-8 max-w-3xl">A curated collection of my 2D, 3D, and music works showcasing visual style, technical execution, and audio direction.</p>
 
                 <!-- CATEGORY FILTER -->
-                <div class="flex flex-wrap gap-3 mb-10">
+                <div class="media-toolbar rounded-xl p-4 flex flex-wrap items-center justify-between gap-3 mb-10">
+                    <p class="text-sm text-gray-400">Browse by category</p>
+                    <div class="flex flex-wrap gap-3">
                     <button class="filter-btn px-4 py-2 rounded-lg bg-cyan-600 text-white text-sm font-medium" data-category="all">All</button>
                     <button class="filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-category="3d">3D</button>
                     <button class="filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-category="2d">2D</button>
                     <button class="filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-category="music">Music</button>
+                    </div>
                 </div>
 
                 <!-- ART GRID -->
                 <div id="art-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     <!-- 3D Example -->
-                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
                             data-category="3d" 
                             onclick="openArtModal([
                                 'assets/art/Final%20Output.jpg',
@@ -309,34 +525,34 @@
                                 'assets/art/W_Left.png',
                                 'assets/art/W_Right.png',
                                 'assets/art/lady.png'
-                            ], '3D Character Model — Selene Wasserglut')">
+                            ], '3D Character Model  - Selene Wasserglut')">
                         <img src="assets/art/Final Output.jpg" alt="3D Model" class="w-full h-56 object-cover">
                         <div class="p-3 text-left">
-                            <p class="text-sm text-gray-300">3D Character Model — Selene</p>
+                            <p class="text-sm text-gray-300">3D Character Model  - Selene</p>
                         </div>
                     </button>
 
-                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
                             data-category="3d" 
                             onclick="openArtModal([
-                                'assets/art/OBENARIO_SCIFI_WEAPON.png'], '3D Model — Scifi Spear')">
+                                'assets/art/OBENARIO_SCIFI_WEAPON.png'], '3D Model  - Scifi Spear')">
                         <img src="assets/art/OBENARIO_SCIFI_WEAPON.png" alt="3D Model" class="w-full h-56 object-cover">
                         <div class="p-3 text-left">
-                            <p class="text-sm text-gray-300">3D Model — Scifi Spear</p>
+                            <p class="text-sm text-gray-300">3D Model  - Scifi Spear</p>
                         </div>
                     </button>
 
-                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
                             data-category="3d" 
                             onclick="openArtModal([
-                                'assets/art/wol.png'], '3D Model — Wall Trim')">
+                                'assets/art/wol.png'], '3D Model  - Wall Trim')">
                         <img src="assets/art/wol.png" alt="3D Model" class="w-full h-56 object-cover">
                         <div class="p-3 text-left">
-                            <p class="text-sm text-gray-300">3D Model — Wall Trim</p>
+                            <p class="text-sm text-gray-300">3D Model  - Wall Trim</p>
                         </div>
                     </button>
 
-                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
                             data-category="3d" 
                             onclick="openArtModal([
                                 'assets/art/WashingMachine.png',
@@ -347,27 +563,27 @@
                                 'assets/art/2b.png',
                                 'assets/art/3b.png',
                                 'assets/art/4.jpg',
-                                'assets/art/NormalMap.png'], '3D Model — Baked Washing Machine')">
+                                'assets/art/NormalMap.png'], '3D Model  - Baked Washing Machine')">
                         <img src="assets/art/WashingMachine.png" alt="3D Model" class="w-full h-56 object-cover">
                         <div class="p-3 text-left">
-                            <p class="text-sm text-gray-300">3D Model — Baked Washing Machine</p>
+                            <p class="text-sm text-gray-300">3D Model  - Baked Washing Machine</p>
                         </div>
                     </button>
 
-                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
                             data-category="3d" 
                             onclick="openArtModal([
                                 'assets/art/other1.png',
                                 'assets/art/other2.png',
-                                'assets/art/chess.png'], '3D Scene — Fully Rendered 3D Scenes')">
+                                'assets/art/chess.png'], '3D Scene  - Fully Rendered 3D Scenes')">
                         <img src="assets/art/other1.png" alt="3D Model" class="w-full h-56 object-cover">
                         <div class="p-3 text-left">
-                            <p class="text-sm text-gray-300">3D Scene — Fully Rendered 3D Scenes</p>
+                            <p class="text-sm text-gray-300">3D Scene  - Fully Rendered 3D Scenes</p>
                         </div>
                     </button>
 
                     <!-- 2D Example with multiple images -->
-                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
                             data-category="2d" 
                             onclick="openArtModal([
                                 'assets/art/r1.png',
@@ -376,31 +592,31 @@
                                 'assets/art/r4.png',
                                 'assets/art/r5.png',
                                 'assets/art/r0.png',
-                                ], '2D — Traditional Drawings')">
+                                ], '2D  - Traditional Drawings')">
                         <img src="assets/art/r0.png" alt="2D" class="w-full h-56 object-cover">
                         <div class="p-3 text-left">
-                            <p class="text-sm text-gray-300">2D — Traditional Drawings</p>
+                            <p class="text-sm text-gray-300">2D  - Traditional Drawings</p>
                         </div>
                     </button>
 
-                    <button class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" 
                             data-category="2d" 
                             onclick="openArtModal([
                                 'assets/art/d1.png',
                                 'assets/art/d2.png',
                                 'assets/art/d3.png',
                                 'assets/art/d4.png'
-                                ], '2D — Digital Drawings')">
+                                ], '2D  - Digital Drawings')">
                         <img src="assets/art/d4.png" alt="2D" class="w-full h-56 object-cover">
                         <div class="p-3 text-left">
-                            <p class="text-sm text-gray-300">2D — Digital Drawings</p>
+                            <p class="text-sm text-gray-300">2D  - Digital Drawings</p>
                         </div>
                     </button>
 
                     <!-- Music Example -->
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “Alice's Dilemma (Who are we?)”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST - Alice's Dilemma (Who are we?)</h3>
                             <p class="text-gray-400 text-sm mt-1">Usurpers' Freedom OST Gb Minor</p>
                         </div>
                         <div class="p-4">
@@ -411,9 +627,9 @@
                         </div>
                     </div>
 
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “Margaux's Battle Theme (La Moisson Nocturne)”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST - Margaux's Battle Theme (La Moisson Nocturne)</h3>
                             <p class="text-gray-400 text-sm mt-1">Usurpers' Freedom OST Bb Minor</p>
                         </div>
                         <div class="p-4">
@@ -424,9 +640,9 @@
                         </div>
                     </div>
 
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “Shiori's Battle Theme (The Voyager 2)”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST - Shiori's Battle Theme (The Voyager 2)</h3>
                             <p class="text-gray-400 text-sm mt-1">Usurpers' Freedom OST Bb Minor</p>
                         </div>
                         <div class="p-4">
@@ -437,9 +653,9 @@
                         </div>
                     </div>
 
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “The Voyager 1 (Final Amargo)”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST - The Voyager 1 (Final Amargo)</h3>
                             <p class="text-gray-400 text-sm mt-1">Usurpers' Freedom OST Bb Minor</p>
                         </div>
                         <div class="p-4">
@@ -450,9 +666,9 @@
                         </div>
                     </div>
 
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “Sibling's Conflict (The Curator)”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST - Sibling's Conflict (The Curator)</h3>
                             <p class="text-gray-400 text-sm mt-1">Usurpers' Freedom OST Gb Minor</p>
                         </div>
                         <div class="p-4">
@@ -463,9 +679,9 @@
                         </div>
                     </div>
 
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “Main Theme (The Puer)”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST - Main Theme (The Puer)</h3>
                             <p class="text-gray-400 text-sm mt-1">Usurpers' Freedom OST Gb Minor</p>
                         </div>
                         <div class="p-4">
@@ -476,9 +692,9 @@
                         </div>
                     </div>
 
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “The Puer LoFi Version”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST - The Puer LoFi Version</h3>
                             <p class="text-gray-400 text-sm mt-1">Usurpers' Freedom OST Gb Minor</p>
                         </div>
                         <div class="p-4">
@@ -489,9 +705,9 @@
                         </div>
                     </div>
 
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST — “Sommerschlaf Waltz (Summer Break)”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Usurpers' Freedom OST - Sommerschlaf Waltz (Summer Break)</h3>
                             <p class="text-gray-400 text-sm mt-1">Usurpers' Freedom OST</p>
                         </div>
                         <div class="p-4">
@@ -502,9 +718,9 @@
                         </div>
                     </div>
 
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage — “Nihility”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage - Nihility</h3>
                             <p class="text-gray-400 text-sm mt-1">Time Paradox Rampage OST</p>
                         </div>
                         <div class="p-4">
@@ -515,9 +731,9 @@
                         </div>
                     </div>
 
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage — “Kung Fury”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage - Kung Fury</h3>
                             <p class="text-gray-400 text-sm mt-1">Time Paradox Rampage OST</p>
                         </div>
                         <div class="p-4">
@@ -528,9 +744,9 @@
                         </div>
                     </div>
 
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage — “Fury's Requiem”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage - Fury's Requiem</h3>
                             <p class="text-gray-400 text-sm mt-1">Time Paradox Rampage OST</p>
                         </div>
                         <div class="p-4">
@@ -541,9 +757,9 @@
                         </div>
                     </div>
                     
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage — “Der Führers Widerstand”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage - Der Fuhrers Widerstand</h3>
                             <p class="text-gray-400 text-sm mt-1">Time Paradox Rampage OST</p>
                         </div>
                         <div class="p-4">
@@ -554,9 +770,9 @@
                         </div>
                     </div>
 
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">The Forge Of Destiny — “A Destiny To Forge”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">The Forge Of Destiny - A Destiny To Forge</h3>
                             <p class="text-gray-400 text-sm mt-1">The Forge Of Destiny OST</p>
                         </div>
                         <div class="p-4">
@@ -567,9 +783,9 @@
                         </div>
                     </div>
 
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage — “A Simple Melody, A Short Farewell”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage - A Simple Melody, A Short Farewell</h3>
                             <p class="text-gray-400 text-sm mt-1">The Forge Of Destiny OST</p>
                         </div>
                         <div class="p-4">
@@ -580,9 +796,9 @@
                         </div>
                     </div>
 
-                    <div class="group art-item bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
+                    <div class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition flex flex-col justify-between" data-category="music">
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage — “Against All Adversity”</h3>
+                            <h3 class="text-lg font-semibold text-cyan-400">Time Paradox Rampage - Against All Adversity</h3>
                             <p class="text-gray-400 text-sm mt-1">The Forge Of Destiny OST</p>
                         </div>
                         <div class="p-4">
@@ -628,7 +844,6 @@
                 </div>
                 
             <!-- Certificate 4 -->  
-            </button>
             <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/Cert67822621576-1.png','Certificate - Autodesk Maya')">
                 <img src="assets/certs/Cert67822621576-1.png" alt="Certificate 3" class="w-full h-44 object-cover">
                 <div class="p-3 text-left">
@@ -637,16 +852,14 @@
             </button>
 
             <!-- Certificate 5 -->  
-            </button>
-            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/cert3.jpg','Certificate - C#')">
-                <img src="assets/certs/cert3-thumb.jpg" alt="Certificate 3" class="w-full h-44 object-cover">
+            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/STI_Diploma_JavaAndDotNetTechnology.jpg','STI College Las Pinas Senior High Diploma')">
+                <img src="assets/certs/STI_Diploma_JavaAndDotNetTechnology.jpg" alt="STI Diploma" class="w-full h-44 object-cover">
                 <div class="p-3 text-left">
-                <p class="text-sm text-gray-300">Certificate - C# (Soon!)</p>
+                <p class="text-sm text-gray-300">STI College Las Pinas Senior High Diploma</p>
                 </div>
             </button>
 
             <!-- Certificate 6 -->  
-            </button>
             <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/3EC0FDF5-8282-411D-ABD9-279587D3E934.png','Certificate - TOPCIT IT Competency Certificate')">
                 <img src="assets/certs/3EC0FDF5-8282-411D-ABD9-279587D3E934.png" alt="Certificate 3" class="w-full h-44 object-cover">
                 <div class="p-3 text-left">
@@ -726,17 +939,17 @@
         <!-- FOOTER -->
         <footer class="py-8 bg-gray-950">
             <div class="max-w-6xl mx-auto px-6 text-center text-gray-500">
-                © <span id="year"></span> Aldreck Obenario — Built with Tailwind • Contact: <a href="mailto:aldreckdegurechaff@gmail.com" class="text-cyan-400">aldreckdegurechaff@gmail.com</a>
+                &copy; <span id="year"></span> Aldreck Obenario - Built with Tailwind - Contact: <a href="mailto:aldreckdegurechaff@gmail.com" class="text-cyan-400">aldreckdegurechaff@gmail.com</a>
             </div>
         </footer>
     </main>
 
-    <!-- GAME DETAIL MODAL -->
+        <!-- GAME DETAIL MODAL -->
     <div id="gameModal" class="fixed inset-0 hidden items-center justify-center z-50 modal-backdrop px-4">
         <div class="bg-gray-900 rounded-2xl shadow-xl max-w-3xl w-full overflow-hidden">
         <div class="flex items-center justify-between p-4 border-b border-gray-800">
             <h3 id="gameModalTitle" class="text-lg font-bold text-white"></h3>
-            <button onclick="closeGameModal()" class="text-gray-400 hover:text-white p-2">✕</button>
+            <button onclick="closeGameModal()" class="text-gray-400 hover:text-white p-2">&times;</button>
         </div>
 
         <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -756,7 +969,7 @@
     <div class="bg-gray-900 rounded-lg shadow-xl max-w-4xl w-full overflow-hidden">
         <div class="flex items-center justify-between p-3 border-b border-gray-800">
         <h4 id="certModalTitle" class="text-white font-semibold">Certificate</h4>
-        <button onclick="closeCert()" class="text-gray-400 hover:text-white p-2">✕</button>
+        <button onclick="closeCert()" class="text-gray-400 hover:text-white p-2">&times;</button>
         </div>
         <div class="p-4 flex justify-center items-center">
         <img 
@@ -775,7 +988,7 @@
             <!-- Header -->
             <div class="flex items-center justify-between p-3 border-b border-gray-800">
                 <h4 id="artModalTitle" class="text-white font-semibold">Art</h4>
-                <button onclick="closeArtModal()" class="text-gray-400 hover:text-white p-2">✕</button>
+                <button onclick="closeArtModal()" class="text-gray-400 hover:text-white p-2">&times;</button>
             </div>
 
             <!-- Carousel Content -->
@@ -784,11 +997,10 @@
             </div>
 
             <!-- Navigation -->
-            <button id="prevArt" class="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-1 rounded">‹</button>
-            <button id="nextArt" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-1 rounded">›</button>
+            <button id="prevArt" class="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-1 rounded">&#8249;</button>
+            <button id="nextArt" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-1 rounded">&#8250;</button>
         </div>
     </div>
-
     <!-- SCRIPTS -->
     <script>
         // Simple UI plumbing
@@ -799,6 +1011,30 @@
         menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
         });
+        // Hero image scroll transform
+        const heroSection = document.getElementById('hero');
+        const heroImageShell = document.getElementById('heroImageShell');
+
+        function updateHeroImageOnScroll() {
+            if (!heroSection || !heroImageShell) return;
+
+            const rect = heroSection.getBoundingClientRect();
+            const progressRaw = (-rect.top) / Math.max(rect.height, 1);
+            const progress = Math.max(0, Math.min(progressRaw, 1));
+
+            const scale = 1 - (progress * 0.35);
+            const translateY = -(progress * 90);
+            const opacity = Math.max(0, 1 - (progress * 1.5));
+            const blur = progress * 4;
+
+            heroImageShell.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale})`;
+            heroImageShell.style.opacity = opacity.toString();
+            heroImageShell.style.filter = `blur(${blur}px)`;
+        }
+
+        updateHeroImageOnScroll();
+        window.addEventListener('scroll', updateHeroImageOnScroll, { passive: true });
+        window.addEventListener('resize', updateHeroImageOnScroll);
 
         // Fade-in on scroll (for elements with .fade-item)
         const faders = document.querySelectorAll('.fade-item');
@@ -938,14 +1174,191 @@
             btn.classList.add('bg-cyan-600', 'text-white');
 
             artItems.forEach(item => {
-                item.style.display = (category === 'all' || item.dataset.category === category) ? 'block' : 'none';
+                item.style.display = (category === 'all' || item.dataset.category === category) ? '' : 'none';
             });
             });
         });
+
+        // UI SFX from local assets
+        const hoverSfx = new Audio('assets/SFX/Hover.mp3');
+        const clickSfx = new Audio('assets/SFX/Click.mp3');
+        hoverSfx.preload = 'auto';
+        clickSfx.preload = 'auto';
+        hoverSfx.volume = 0.2;
+        clickSfx.volume = 0.28;
+
+        function playSfx(sound) {
+            try {
+                const sfx = sound.cloneNode();
+                sfx.volume = sound.volume;
+                sfx.play();
+            } catch (_) {
+                // no-op if browser blocks autoplay before first interaction
+            }
+        }
+
+        function attachUiSfx() {
+            const interactive = document.querySelectorAll('a, button');
+            interactive.forEach(el => {
+                el.addEventListener('mouseenter', () => playSfx(hoverSfx));
+                el.addEventListener('click', () => playSfx(clickSfx));
+            });
+        }
+
+        attachUiSfx();
+
+        // Local file fallback for YouTube embed (prevents Error 153 on file://)
+        function setupVideoFallbackForLocalFile() {
+            const frame = document.getElementById('aboutVideoFrame');
+            const thumb = document.getElementById('aboutVideoThumb');
+            if (!frame || !thumb) return;
+            if (window.location.protocol === 'file:') {
+                frame.classList.add('hidden');
+                thumb.classList.remove('hidden');
+            }
+        }
+
+        setupVideoFallbackForLocalFile();
+
+        // Interactive particle field
+        const particleCanvas = document.getElementById('fxParticles');
+        const pctx = particleCanvas ? particleCanvas.getContext('2d') : null;
+        const particleCount = 78;
+        const particles = [];
+        let lastTs = 0;
+        let scrollBoost = 0;
+        let lastScrollY = window.scrollY;
+        const pointer = { x: -9999, y: -9999, active: false };
+
+        function resizeParticles() {
+            if (!particleCanvas) return;
+            particleCanvas.width = window.innerWidth;
+            particleCanvas.height = window.innerHeight;
+        }
+
+        function seedParticles() {
+            if (!particleCanvas) return;
+            particles.length = 0;
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * particleCanvas.width,
+                    y: Math.random() * particleCanvas.height,
+                    r: Math.random() * 1.8 + 0.5,
+                    vx: (Math.random() - 0.5) * 0.18,
+                    vy: (Math.random() - 0.5) * 0.16,
+                    a: Math.random() * 0.25 + 0.16
+                });
+            }
+        }
+
+        function drawLinks() {
+            if (!pctx) return;
+            const linkDistance = 92;
+            for (let i = 0; i < particles.length; i++) {
+                const p1 = particles[i];
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p2.x - p1.x;
+                    const dy = p2.y - p1.y;
+                    const dist = Math.hypot(dx, dy);
+                    if (dist > linkDistance) continue;
+                    const alpha = (1 - dist / linkDistance) * 0.12;
+                    pctx.beginPath();
+                    pctx.moveTo(p1.x, p1.y);
+                    pctx.lineTo(p2.x, p2.y);
+                    pctx.strokeStyle = `rgba(246,114,128,${alpha})`;
+                    pctx.lineWidth = 0.7;
+                    pctx.stroke();
+                }
+            }
+        }
+
+        function drawParticles(ts) {
+            if (!pctx || !particleCanvas) return;
+            const dt = Math.min((ts - lastTs) / 16.67 || 1, 2);
+            lastTs = ts;
+            pctx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
+
+            const speedBoost = 1 + Math.min(scrollBoost, 1.4);
+            particles.forEach(p => {
+                if (pointer.active) {
+                    const dxp = pointer.x - p.x;
+                    const dyp = pointer.y - p.y;
+                    const d = Math.hypot(dxp, dyp) || 1;
+                    if (d < 170) {
+                        const pull = (1 - d / 170) * 0.05;
+                        p.vx += (dxp / d) * pull;
+                        p.vy += (dyp / d) * pull;
+                    }
+                }
+
+                p.vx *= 0.986;
+                p.vy *= 0.986;
+                p.x += p.vx * dt * speedBoost;
+                p.y += p.vy * dt * speedBoost;
+
+                if (p.x < -8) p.x = particleCanvas.width + 8;
+                if (p.x > particleCanvas.width + 8) p.x = -8;
+                if (p.y < -8) p.y = particleCanvas.height + 8;
+                if (p.y > particleCanvas.height + 8) p.y = -8;
+
+                pctx.beginPath();
+                pctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                pctx.fillStyle = `rgba(246,114,128,${p.a})`;
+                pctx.fill();
+            });
+
+            drawLinks();
+
+            if (pointer.active) {
+                const grd = pctx.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, 110);
+                grd.addColorStop(0, 'rgba(246,114,128,0.18)');
+                grd.addColorStop(1, 'rgba(246,114,128,0)');
+                pctx.beginPath();
+                pctx.fillStyle = grd;
+                pctx.arc(pointer.x, pointer.y, 110, 0, Math.PI * 2);
+                pctx.fill();
+            }
+
+            scrollBoost *= 0.9;
+            requestAnimationFrame(drawParticles);
+        }
+
+        window.addEventListener('scroll', () => {
+            const currentY = window.scrollY;
+            const delta = Math.abs(currentY - lastScrollY);
+            lastScrollY = currentY;
+            scrollBoost = Math.min(scrollBoost + delta * 0.0022, 2);
+        }, { passive: true });
+
+        window.addEventListener('pointermove', (e) => {
+            pointer.x = e.clientX;
+            pointer.y = e.clientY;
+            pointer.active = true;
+        }, { passive: true });
+
+        window.addEventListener('pointerleave', () => {
+            pointer.active = false;
+        });
+
+        resizeParticles();
+        seedParticles();
+        window.addEventListener('resize', () => {
+            resizeParticles();
+            seedParticles();
+        });
+        requestAnimationFrame(drawParticles);
     </script>
     </body>
 
 </html>
+
+
+
+
+
+
+
 
 
 
