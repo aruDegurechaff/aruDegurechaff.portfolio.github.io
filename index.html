@@ -117,112 +117,147 @@
                 border-color: rgba(246,114,128,0.44);
             }
 
-            .playlist-shell {
-                border: 1px solid rgba(29,185,84,0.25);
+            .audio-gallery-shell {
+                border: 1px solid rgba(192,108,132,0.24);
                 background:
-                    radial-gradient(circle at 12% -10%, rgba(29,185,84,0.14), transparent 42%),
-                    linear-gradient(160deg, rgba(18,23,26,0.95), rgba(13,18,22,0.96));
-                box-shadow: 0 22px 44px rgba(5, 9, 12, 0.42);
+                    radial-gradient(circle at 88% 0%, rgba(246,114,128,0.12), transparent 38%),
+                    linear-gradient(160deg, rgba(20,17,35,0.94), rgba(15,18,30,0.96));
+                box-shadow: 0 22px 44px rgba(5, 7, 14, 0.42);
             }
 
-            .playlist-head {
+            .audio-gallery-head {
+                display: flex;
+                align-items: start;
+                justify-content: space-between;
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .audio-stats-panel {
+                min-width: 11rem;
+                border: 1px solid rgba(246,114,128,0.28);
+                background: rgba(255,255,255,0.04);
+                border-radius: 0.5rem;
+                padding: 0.9rem;
+            }
+
+            .audio-project-grid {
                 display: grid;
-                grid-template-columns: minmax(100px, 140px) 1fr;
-                gap: 1rem;
-                align-items: center;
+                grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
+                gap: 1.25rem;
             }
 
-            .playlist-cover {
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                border-radius: 0.95rem;
-                object-fit: cover;
-                border: 1px solid rgba(29,185,84,0.4);
-                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
-            }
-
-            .playlist-list {
-                margin-top: 1.35rem;
-                border: 1px solid rgba(255,255,255,0.08);
-                border-radius: 0.9rem;
+            .audio-project-card,
+            .voice-card {
+                border: 1px solid rgba(192,108,132,0.2);
+                border-radius: 0.5rem;
                 overflow: hidden;
+                background: rgba(15, 13, 27, 0.78);
             }
 
-            .playlist-row {
-                display: grid;
-                grid-template-columns: 2rem minmax(0, 1fr) auto minmax(220px, 340px);
-                align-items: center;
-                gap: 0.85rem;
-                padding: 0.8rem 1rem;
-                background: rgba(255,255,255,0.02);
-                border-bottom: 1px solid rgba(255,255,255,0.05);
+            .audio-project-card:hover,
+            .voice-card:hover {
+                border-color: rgba(246,114,128,0.44);
             }
 
-            .playlist-row:last-child {
-                border-bottom: none;
+            .audio-project-cover,
+            .voice-cover {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
+                background: rgba(255,255,255,0.04);
             }
 
-            .playlist-row:hover {
-                background: rgba(29,185,84,0.08);
+            .audio-project-body,
+            .voice-card-body {
+                padding: 1rem;
             }
 
-            .playlist-index {
-                font-size: 0.88rem;
-                color: #8fa3b5;
+            .audio-project-meta {
+                display: flex;
+                align-items: start;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+
+            .audio-pill,
+            .voice-pill {
+                flex: 0 0 auto;
+                border: 1px solid rgba(246,114,128,0.34);
+                border-radius: 9999px;
+                color: #f8b4bf;
+                background: rgba(246,114,128,0.08);
+                padding: 0.2rem 0.55rem;
+                font-size: 0.75rem;
                 font-weight: 700;
-                text-align: right;
+                text-transform: uppercase;
             }
 
-            .playlist-track-title {
-                color: #f2f7fb;
+            .audio-track-list,
+            .voice-preview-list {
+                display: grid;
+                gap: 0.65rem;
+                margin-top: 1rem;
+            }
+
+            .audio-track-row,
+            .voice-sample-row {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(190px, 280px);
+                align-items: center;
+                gap: 0.75rem;
+                padding: 0.75rem;
+                border: 1px solid rgba(255,255,255,0.08);
+                border-radius: 0.5rem;
+                background: rgba(255,255,255,0.03);
+            }
+
+            .audio-track-row:hover,
+            .voice-sample-row:hover {
+                background: rgba(246,114,128,0.08);
+            }
+
+            .audio-track-title,
+            .voice-sample-title {
+                color: #f7eef4;
                 font-weight: 600;
                 line-height: 1.2;
             }
 
-            .playlist-track-sub {
-                color: #9ab0bf;
+            .audio-track-sub,
+            .voice-sample-sub {
+                color: #c9b9cb;
                 font-size: 0.82rem;
             }
 
-            .playlist-badge {
-                font-size: 0.72rem;
-                font-weight: 700;
-                letter-spacing: 0.04em;
-                text-transform: uppercase;
-                color: #b7f5cf;
-                background: rgba(29,185,84,0.18);
-                border: 1px solid rgba(29,185,84,0.4);
-                padding: 0.2rem 0.55rem;
-                border-radius: 9999px;
-            }
-
-            .playlist-row audio {
+            .audio-track-row audio,
+            .voice-sample-row audio,
+            .voice-card audio {
                 width: 100%;
                 height: 2rem;
                 filter: saturate(1.02);
             }
 
-            @media (max-width: 900px) {
-                .playlist-row {
-                    grid-template-columns: 2rem minmax(0, 1fr);
-                }
-
-                .playlist-badge {
-                    justify-self: start;
-                }
-
-                .playlist-row audio {
-                    grid-column: 1 / -1;
-                }
+            .voice-modal-list {
+                display: grid;
+                gap: 0.75rem;
+                max-height: 62vh;
+                overflow-y: auto;
+                padding-right: 0.25rem;
             }
 
-            @media (max-width: 640px) {
-                .playlist-head {
-                    grid-template-columns: 1fr;
+            @media (max-width: 900px) {
+                .audio-gallery-head {
+                    flex-direction: column;
                 }
 
-                .playlist-cover {
-                    max-width: 9rem;
+                .audio-stats-panel {
+                    width: 100%;
+                }
+
+                .audio-track-row,
+                .voice-sample-row {
+                    grid-template-columns: 1fr;
                 }
             }
 
@@ -419,19 +454,20 @@
             <span class="text-sm text-gray-400 hidden sm:inline">Game Dev - Aspiring Game Designer - Composer - 3D</span>
         </a>
 
-        <ul class="hidden md:flex items-center space-x-6 text-gray-300">
+        <ul class="hidden lg:flex items-center space-x-5 text-gray-300">
             <li><a class="nav-link hover:text-cyan-400 transition" href="#about">About</a></li>
             <li><a class="nav-link hover:text-cyan-400 transition" href="#skills">Skills</a></li>
             <li><a class="nav-link hover:text-cyan-400 transition" href="#thesis">Docs</a></li>
             <li><a class="nav-link hover:text-cyan-400 transition" href="#project-showcase">Showreel</a></li>
             <li><a class="nav-link hover:text-cyan-400 transition" href="#games">Games</a></li>
             <li><a class="nav-link hover:text-cyan-400 transition" href="#art">Art Gallery</a></li>
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#voice">Voice</a></li>
             <li><a class="nav-link hover:text-cyan-400 transition" href="#music">Music</a></li>
             <li><a class="nav-link hover:text-cyan-400 transition" href="#certificates">Certificates</a></li>
             <li><a class="nav-link hover:text-cyan-400 transition" href="#contact">Contact</a></li>
         </ul>
 
-        <button id="menuBtn" class="md:hidden p-2">
+        <button id="menuBtn" class="lg:hidden p-2">
             <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M4 6h16M4 12h16M4 18h16"/>
@@ -440,7 +476,7 @@
         </nav>
 
         <!-- MOBILE MENU -->
-        <div id="mobileMenu" class="hidden md:hidden border-t border-gray-800 bg-gray-900/95">
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-800 bg-gray-900/95">
         <div class="px-6 py-4 flex flex-col gap-3">
             <a href="#about" class="nav-link text-gray-300 hover:text-cyan-400">About</a>
             <a href="#skills" class="nav-link text-gray-300 hover:text-cyan-400">Skills</a>
@@ -448,6 +484,7 @@
             <a href="#project-showcase" class="nav-link text-gray-300 hover:text-cyan-400">Showreel</a>
             <a href="#games" class="nav-link text-gray-300 hover:text-cyan-400">Games</a>
             <a href="#art" class="nav-link text-gray-300 hover:text-cyan-400">Art Gallery</a>
+            <a href="#voice" class="nav-link text-gray-300 hover:text-cyan-400">Voice Acting</a>
             <a href="#music" class="nav-link text-gray-300 hover:text-cyan-400">Music</a>
             <a href="#certificates" class="nav-link text-gray-300 hover:text-cyan-400">Certificates</a>
             <a href="#contact" class="nav-link text-gray-300 hover:text-cyan-400">Contact</a>
@@ -930,11 +967,11 @@
                             'Size Matters (Omen IV)',
                             'OJT project at Lamina Studios. Roles: Game Designer, Technical Artist, Musician, and minor programming. Built in Unreal Engine.',
                             'assets/img/SizeMatters.png',
-                            '#'
+                            'https://drive.google.com/drive/folders/1bsx_QohWPIwQ5xPrhk3hJ7nu0GSi-KjG?usp=sharing'
                         )"
                         class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
 
-                        <span class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm">OJT Project</span>
+                        <a href="https://drive.google.com/drive/folders/1bsx_QohWPIwQ5xPrhk3hJ7nu0GSi-KjG?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
                     </div>
                 </article>
         
@@ -951,7 +988,7 @@
                 <div class="media-toolbar rounded-xl p-4 flex flex-wrap items-center justify-between gap-3 mb-10">
                     <p class="text-sm text-gray-400">Browse by category</p>
                     <div class="flex flex-wrap gap-3">
-                        <button class="filter-btn px-4 py-2 rounded-lg bg-cyan-600 text-white text-sm font-medium" data-category="all">All</button>
+                        <button class="filter-btn px-4 py-2 rounded-lg bg-cyan-500 text-white text-sm font-medium" data-category="all">All</button>
                         <button class="filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-category="3d">3D</button>
                         <button class="filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-category="2d">2D</button>
                     </div>
@@ -996,40 +1033,186 @@
             </div>
         </section>
 
-        <!-- MUSIC PLAYLIST -->
-        <section id="music" class="py-20">
+        <!-- VOICE ACTING -->
+        <section id="voice" class="py-20">
             <div class="max-w-6xl mx-auto px-6">
-                <div class="playlist-shell rounded-2xl p-6 md:p-8 fade-item opacity-0 translate-y-6 transition duration-700">
-                    <div class="playlist-head">
-                        <img src="assets/img/Grandeur.png" alt="Playlist cover art" class="playlist-cover">
+                <div class="audio-gallery-shell rounded-2xl p-6 md:p-8 fade-item opacity-0 translate-y-6 transition duration-700">
+                    <div class="audio-gallery-head">
                         <div>
-                            <span class="section-kicker">Original Soundtracks</span>
-                            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">Music Playlist</h2>
-                            <p class="text-gray-300 max-w-2xl">A curated soundtrack board inspired by playlist UX. Explore my compositions from Usurpers, Time Paradox Rampage, Forge of Destiny, Cold Light, and Size Matters.</p>
-                            <p class="text-sm text-gray-400 mt-2">19 tracks - Game OST - Composer & Sound Designer</p>
+                            <span class="section-kicker">Performance Reel</span>
+                            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">Voice Acting</h2>
+                            <p class="text-gray-300 max-w-2xl">Character dialogue samples grouped by project, with room for new roles and future reels.</p>
+                        </div>
+                        <div class="audio-stats-panel">
+                            <p class="text-2xl font-bold text-cyan-300">21</p>
+                            <p class="text-sm text-gray-400">Size Matters clips</p>
                         </div>
                     </div>
 
-                    <div class="playlist-list">
-                        <div class="playlist-row"><span class="playlist-index">01</span><div><p class="playlist-track-title">Alice's Dilemma (Who Are We?)</p><p class="playlist-track-sub">Usurpers' Freedom OST - Gb Minor</p></div><span class="playlist-badge">Usurpers</span><audio controls preload="none"><source src="assets/music/usurpers/Battle Theme 1(Alice's Theme, Who are we).mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">02</span><div><p class="playlist-track-title">La Moisson Nocturne</p><p class="playlist-track-sub">Usurpers' Freedom OST - Bb Minor</p></div><span class="playlist-badge">Usurpers</span><audio controls preload="none"><source src="assets/music/usurpers/Battle Theme 2 (Margaux's Battle Theme La Moisson Nocturne).mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">03</span><div><p class="playlist-track-title">The Voyager 2</p><p class="playlist-track-sub">Usurpers' Freedom OST - Bb Minor</p></div><span class="playlist-badge">Usurpers</span><audio controls preload="none"><source src="assets/music/usurpers/Battle Theme 3(Shiori's Battle Theme, The Voyager 2).mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">04</span><div><p class="playlist-track-title">The Voyager 1 (Final Amargo)</p><p class="playlist-track-sub">Usurpers' Freedom OST - Bb Minor</p></div><span class="playlist-badge">Usurpers</span><audio controls preload="none"><source src="assets/music/usurpers/Battle Theme 3 2nd Part(The Voyager 1, Final Amargo).mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">05</span><div><p class="playlist-track-title">Sibling's Conflict (The Curator)</p><p class="playlist-track-sub">Usurpers' Freedom OST - Gb Minor</p></div><span class="playlist-badge">Usurpers</span><audio controls preload="none"><source src="assets/music/usurpers/The Curator's Battle Theme (The Sibling's Conflict).mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">06</span><div><p class="playlist-track-title">Main Theme (The Puer)</p><p class="playlist-track-sub">Usurpers' Freedom OST - Gb Minor</p></div><span class="playlist-badge">Usurpers</span><audio controls preload="none"><source src="assets/music/usurpers/Main Theme(Puer's Theme, The Red Skies We Saw).mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">07</span><div><p class="playlist-track-title">The Puer LoFi Version</p><p class="playlist-track-sub">Usurpers' Freedom OST - Gb Minor</p></div><span class="playlist-badge">Usurpers</span><audio controls preload="none"><source src="assets/music/usurpers/Main Theme(Puer's Theme, The Red Skies We Saw) LoFi Version.mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">08</span><div><p class="playlist-track-title">Sommerschlaf Waltz (Summer Break)</p><p class="playlist-track-sub">Usurpers' Freedom OST</p></div><span class="playlist-badge">Usurpers</span><audio controls preload="none"><source src="assets/music/usurpers/Sommerschlaf Waltz Orignal Version.mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">09</span><div><p class="playlist-track-title">Nihility</p><p class="playlist-track-sub">Time Paradox Rampage OST</p></div><span class="playlist-badge">TPR</span><audio controls preload="none"><source src="assets/music/tpr/Nihility.mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">10</span><div><p class="playlist-track-title">Kung Fury</p><p class="playlist-track-sub">Time Paradox Rampage OST</p></div><span class="playlist-badge">TPR</span><audio controls preload="none"><source src="assets/music/tpr/Kung_Fury_Boss_Theme.mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">11</span><div><p class="playlist-track-title">Fury's Requiem</p><p class="playlist-track-sub">Time Paradox Rampage OST</p></div><span class="playlist-badge">TPR</span><audio controls preload="none"><source src="assets/music/tpr/Fury's Requiem.mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">12</span><div><p class="playlist-track-title">Der Fuhrers Widerstand</p><p class="playlist-track-sub">Time Paradox Rampage OST</p></div><span class="playlist-badge">TPR</span><audio controls preload="none"><source src="assets/music/tpr/Der%20F%C3%BChrers%20Widerstand.mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">13</span><div><p class="playlist-track-title">A Destiny To Forge</p><p class="playlist-track-sub">The Forge Of Destiny OST</p></div><span class="playlist-badge">TFD</span><audio controls preload="none"><source src="assets/music/tfd/A Destiny To Forge.mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">14</span><div><p class="playlist-track-title">A Simple Melody, A Short Farewell</p><p class="playlist-track-sub">The Forge Of Destiny OST</p></div><span class="playlist-badge">TFD</span><audio controls preload="none"><source src="assets/music/tfd/A Simple Melody, A Short Farewell.mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">15</span><div><p class="playlist-track-title">Against All Adversity</p><p class="playlist-track-sub">The Forge Of Destiny OST</p></div><span class="playlist-badge">TFD</span><audio controls preload="none"><source src="assets/music/tfd/Against All Adversity.mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">16</span><div><p class="playlist-track-title">Cold Light (Main Menu Version)</p><p class="playlist-track-sub">Cold Light OST</p></div><span class="playlist-badge">Cold Light</span><audio controls preload="none"><source src="assets/music/coldlight/Cold Light (Main Menu Version).mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">17</span><div><p class="playlist-track-title">Cold Light (Full Version)</p><p class="playlist-track-sub">Cold Light OST</p></div><span class="playlist-badge">Cold Light</span><audio controls preload="none"><source src="assets/music/coldlight/Cold Light(Full Version).mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">18</span><div><p class="playlist-track-title">The Chase</p><p class="playlist-track-sub">Cold Light OST</p></div><span class="playlist-badge">Cold Light</span><audio controls preload="none"><source src="assets/music/coldlight/The Chase.mp3" type="audio/mpeg"></audio></div>
-                        <div class="playlist-row"><span class="playlist-index">19</span><div><p class="playlist-track-title">It's SOO BIG!</p><p class="playlist-track-sub">Size Matters OST</p></div><span class="playlist-badge">Size Matters</span><audio controls preload="none"><source src="assets/music/sizematters/It's SOO BIG!.mp3" type="audio/mpeg"></audio></div>
+                    <div class="media-toolbar rounded-xl p-4 flex flex-wrap items-center justify-between gap-3 mb-8">
+                        <p class="text-sm text-gray-400">Browse by project</p>
+                        <div class="flex flex-wrap gap-3">
+                            <button class="voice-filter-btn px-4 py-2 rounded-lg bg-cyan-500 text-white text-sm font-medium" data-project="all">All</button>
+                            <button class="voice-filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-project="sizematters">Size Matters</button>
+                        </div>
+                    </div>
+
+                    <div id="voice-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <article class="voice-item voice-card group shadow hover:scale-[1.01] transition" data-project="sizematters">
+                            <img src="assets/img/SizeMatters.png" alt="Size Matters voice acting reel" class="voice-cover">
+                            <div class="voice-card-body">
+                                <div class="audio-project-meta">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-cyan-400">Size Matters (Omen IV)</h3>
+                                        <p class="text-sm text-gray-400">Dialogue samples - Voice Acting</p>
+                                    </div>
+                                    <span class="voice-pill">21 clips</span>
+                                </div>
+                                <p class="text-gray-300 text-sm mt-3">In-game voice samples and alternate line reads recorded for the OJT project.</p>
+
+                                <div class="voice-preview-list">
+                                    <div class="voice-sample-row">
+                                        <div>
+                                            <p class="voice-sample-title">Preview Line 01</p>
+                                            <p class="voice-sample-sub">Size Matters - Dialogue Set 1</p>
+                                        </div>
+                                        <audio controls preload="none"><source src="assets/voiceacting/sizematters/1-1.MP3" type="audio/mpeg"></audio>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 flex flex-wrap gap-3">
+                                    <button onclick="openVoiceProject('sizematters')" class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">Open Voice Reel</button>
+                                    <a href="#music" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Related OST</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MUSIC GALLERY -->
+        <section id="music" class="py-20">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="audio-gallery-shell rounded-2xl p-6 md:p-8 fade-item opacity-0 translate-y-6 transition duration-700">
+                    <div class="audio-gallery-head">
+                        <div>
+                            <span class="section-kicker">Original Soundtracks</span>
+                            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">Music Gallery</h2>
+                            <p class="text-gray-300 max-w-2xl">Project-based soundtrack collections from Usurpers, Time Paradox Rampage, Forge of Destiny, Cold Light, and Size Matters.</p>
+                        </div>
+                        <div class="audio-stats-panel">
+                            <p class="text-2xl font-bold text-cyan-300">19</p>
+                            <p class="text-sm text-gray-400">Tracks across 5 projects</p>
+                        </div>
+                    </div>
+
+                    <div class="media-toolbar rounded-xl p-4 flex flex-wrap items-center justify-between gap-3 mb-8">
+                        <p class="text-sm text-gray-400">Browse by project</p>
+                        <div class="flex flex-wrap gap-3">
+                            <button class="music-filter-btn px-4 py-2 rounded-lg bg-cyan-500 text-white text-sm font-medium" data-project="all">All</button>
+                            <button class="music-filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-project="usurpers">Usurpers</button>
+                            <button class="music-filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-project="tpr">Time Paradox</button>
+                            <button class="music-filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-project="tfd">Forge of Destiny</button>
+                            <button class="music-filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-project="coldlight">Cold Light</button>
+                            <button class="music-filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-project="sizematters">Size Matters</button>
+                        </div>
+                    </div>
+
+                    <div id="music-grid" class="audio-project-grid">
+                        <article class="music-project-card audio-project-card shadow transition" data-project="usurpers">
+                            <img src="assets/img/usurpers-thumb.png" alt="Usurpers: Freedom soundtrack cover" class="audio-project-cover">
+                            <div class="audio-project-body">
+                                <div class="audio-project-meta">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-cyan-400">Usurpers: Freedom</h3>
+                                        <p class="text-sm text-gray-400">OST - Composer & Sound Designer</p>
+                                    </div>
+                                    <span class="audio-pill">8 tracks</span>
+                                </div>
+                                <div class="audio-track-list">
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Alice's Dilemma (Who Are We?)</p><p class="audio-track-sub">Gb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/Battle Theme 1(Alice's Theme, Who are we).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">La Moisson Nocturne</p><p class="audio-track-sub">Bb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/Battle Theme 2 (Margaux's Battle Theme La Moisson Nocturne).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">The Voyager 2</p><p class="audio-track-sub">Bb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/Battle Theme 3(Shiori's Battle Theme, The Voyager 2).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">The Voyager 1 (Final Amargo)</p><p class="audio-track-sub">Bb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/Battle Theme 3 2nd Part(The Voyager 1, Final Amargo).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Sibling's Conflict (The Curator)</p><p class="audio-track-sub">Gb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/The Curator's Battle Theme (The Sibling's Conflict).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Main Theme (The Puer)</p><p class="audio-track-sub">Gb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/Main Theme(Puer's Theme, The Red Skies We Saw).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">The Puer LoFi Version</p><p class="audio-track-sub">Gb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/Main Theme(Puer's Theme, The Red Skies We Saw) LoFi Version.mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Sommerschlaf Waltz (Summer Break)</p><p class="audio-track-sub">Original version</p></div><audio controls preload="none"><source src="assets/music/usurpers/Sommerschlaf Waltz Orignal Version.mp3" type="audio/mpeg"></audio></div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="music-project-card audio-project-card shadow transition" data-project="tpr">
+                            <img src="assets/img/aldreck.png" alt="Time Paradox Rampage soundtrack cover" class="audio-project-cover">
+                            <div class="audio-project-body">
+                                <div class="audio-project-meta">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-cyan-400">Time Paradox Rampage</h3>
+                                        <p class="text-sm text-gray-400">OST - Action themes</p>
+                                    </div>
+                                    <span class="audio-pill">4 tracks</span>
+                                </div>
+                                <div class="audio-track-list">
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Nihility</p><p class="audio-track-sub">Time Paradox Rampage OST</p></div><audio controls preload="none"><source src="assets/music/tpr/Nihility.mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Kung Fury</p><p class="audio-track-sub">Boss theme</p></div><audio controls preload="none"><source src="assets/music/tpr/Kung_Fury_Boss_Theme.mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Fury's Requiem</p><p class="audio-track-sub">Time Paradox Rampage OST</p></div><audio controls preload="none"><source src="assets/music/tpr/Fury's Requiem.mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Der Fuhrers Widerstand</p><p class="audio-track-sub">Time Paradox Rampage OST</p></div><audio controls preload="none"><source src="assets/music/tpr/Der%20F%C3%BChrers%20Widerstand.mp3" type="audio/mpeg"></audio></div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="music-project-card audio-project-card shadow transition" data-project="tfd">
+                            <img src="assets/img/Grandeur.png" alt="The Forge Of Destiny soundtrack cover" class="audio-project-cover">
+                            <div class="audio-project-body">
+                                <div class="audio-project-meta">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-cyan-400">The Forge Of Destiny</h3>
+                                        <p class="text-sm text-gray-400">OST - Dramatic themes</p>
+                                    </div>
+                                    <span class="audio-pill">3 tracks</span>
+                                </div>
+                                <div class="audio-track-list">
+                                    <div class="audio-track-row"><div><p class="audio-track-title">A Destiny To Forge</p><p class="audio-track-sub">The Forge Of Destiny OST</p></div><audio controls preload="none"><source src="assets/music/tfd/A Destiny To Forge.mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">A Simple Melody, A Short Farewell</p><p class="audio-track-sub">The Forge Of Destiny OST</p></div><audio controls preload="none"><source src="assets/music/tfd/A Simple Melody, A Short Farewell.mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Against All Adversity</p><p class="audio-track-sub">The Forge Of Destiny OST</p></div><audio controls preload="none"><source src="assets/music/tfd/Against All Adversity.mp3" type="audio/mpeg"></audio></div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="music-project-card audio-project-card shadow transition" data-project="coldlight">
+                            <img src="assets/img/ColdLight.png" alt="Cold Light soundtrack cover" class="audio-project-cover">
+                            <div class="audio-project-body">
+                                <div class="audio-project-meta">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-cyan-400">Cold Light</h3>
+                                        <p class="text-sm text-gray-400">OST - Sound Designer & Musician</p>
+                                    </div>
+                                    <span class="audio-pill">3 tracks</span>
+                                </div>
+                                <div class="audio-track-list">
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Cold Light (Main Menu Version)</p><p class="audio-track-sub">Cold Light OST</p></div><audio controls preload="none"><source src="assets/music/coldlight/Cold Light (Main Menu Version).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Cold Light (Full Version)</p><p class="audio-track-sub">Cold Light OST</p></div><audio controls preload="none"><source src="assets/music/coldlight/Cold Light(Full Version).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">The Chase</p><p class="audio-track-sub">Cold Light OST</p></div><audio controls preload="none"><source src="assets/music/coldlight/The Chase.mp3" type="audio/mpeg"></audio></div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="music-project-card audio-project-card shadow transition" data-project="sizematters">
+                            <img src="assets/img/SizeMatters.png" alt="Size Matters soundtrack cover" class="audio-project-cover">
+                            <div class="audio-project-body">
+                                <div class="audio-project-meta">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-cyan-400">Size Matters</h3>
+                                        <p class="text-sm text-gray-400">OST - Omen IV project</p>
+                                    </div>
+                                    <span class="audio-pill">1 track</span>
+                                </div>
+                                <div class="audio-track-list">
+                                    <div class="audio-track-row"><div><p class="audio-track-title">It's SOO BIG!</p><p class="audio-track-sub">Size Matters OST</p></div><audio controls preload="none"><source src="assets/music/sizematters/It's SOO BIG!.mp3" type="audio/mpeg"></audio></div>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -1176,7 +1359,7 @@
             <div class="md:col-span-2">
             <p id="gameModalDesc" class="text-gray-300 mb-4"></p>
             <div class="flex gap-3">
-                <a id="gameModalDownload" href="#" class="px-4 py-2 bg-cyan-500 text-white rounded-full">Download</a>
+                <a id="gameModalDownload" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-cyan-500 text-white rounded-full">Download</a>
             </div>
             </div>
         </div>
@@ -1218,6 +1401,23 @@
             <!-- Navigation -->
             <button id="prevArt" class="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-1 rounded">&#8249;</button>
             <button id="nextArt" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-1 rounded">&#8250;</button>
+        </div>
+    </div>
+
+    <!-- VOICE REEL MODAL -->
+    <div id="voiceModal" class="fixed inset-0 hidden items-center justify-center z-50 modal-backdrop px-4 bg-black/70">
+        <div class="bg-gray-900 rounded-lg shadow-xl max-w-5xl w-full overflow-hidden">
+            <div class="flex items-center justify-between p-4 border-b border-gray-800">
+                <div>
+                    <h4 id="voiceModalTitle" class="text-white font-semibold">Voice Acting</h4>
+                    <p id="voiceModalSubtitle" class="text-sm text-gray-400"></p>
+                </div>
+                <button onclick="closeVoiceModal()" class="text-gray-400 hover:text-white p-2">&times;</button>
+            </div>
+            <div class="p-4 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <img id="voiceModalImage" src="" alt="Voice acting project" class="w-full aspect-video object-cover rounded-lg md:col-span-1">
+                <div id="voiceModalList" class="voice-modal-list md:col-span-2"></div>
+            </div>
         </div>
     </div>
     <!-- SCRIPTS -->
@@ -1396,10 +1596,96 @@
             if (e.target === document.getElementById('artModal')) closeArtModal();
         });
 
-        // Close on Escape key
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeArtModal();
-        });
+        const voiceProjects = {
+            sizematters: {
+                title: 'Size Matters (Omen IV)',
+                subtitle: '21 dialogue clips - Voice Acting',
+                image: 'assets/img/SizeMatters.png',
+                samples: [
+                    { title: 'Line Set 1 - Clip 01', subtitle: 'Size Matters dialogue', src: 'assets/voiceacting/sizematters/1-1.MP3' },
+                    { title: 'Line Set 1 - Clip 02', subtitle: 'Size Matters dialogue', src: 'assets/voiceacting/sizematters/1-2.MP3' },
+                    { title: 'Line Set 1 - Clip 03', subtitle: 'Size Matters dialogue', src: 'assets/voiceacting/sizematters/1-3.MP3' },
+                    { title: 'Line Set 1 - Clip 04', subtitle: 'Size Matters dialogue', src: 'assets/voiceacting/sizematters/1-4.MP3' },
+                    { title: 'Line Set 1 - Clip 05', subtitle: 'Size Matters dialogue', src: 'assets/voiceacting/sizematters/1-5.MP3' },
+                    { title: 'Line Set 1 - Clip 06', subtitle: 'Size Matters dialogue', src: 'assets/voiceacting/sizematters/1-6.MP3' },
+                    { title: 'Line Set 1 - Clip 07', subtitle: 'Size Matters dialogue', src: 'assets/voiceacting/sizematters/1-7.MP3' },
+                    { title: 'Line Set 1 - Clip 08', subtitle: 'Size Matters dialogue', src: 'assets/voiceacting/sizematters/1-8.MP3' },
+                    { title: 'Dialogue Set D - Clip 01', subtitle: 'Size Matters alternate read', src: 'assets/voiceacting/sizematters/d-1.MP3' },
+                    { title: 'Dialogue Set D - Clip 02', subtitle: 'Size Matters alternate read', src: 'assets/voiceacting/sizematters/d-2.MP3' },
+                    { title: 'Dialogue Set D - Clip 03', subtitle: 'Size Matters alternate read', src: 'assets/voiceacting/sizematters/d-3.MP3' },
+                    { title: 'Dialogue Set D - Clip 04', subtitle: 'Size Matters alternate read', src: 'assets/voiceacting/sizematters/d-4.MP3' },
+                    { title: 'Dialogue Set D - Clip 05', subtitle: 'Size Matters alternate read', src: 'assets/voiceacting/sizematters/d-5.MP3' },
+                    { title: 'Dialogue Set D - Clip 06', subtitle: 'Size Matters alternate read', src: 'assets/voiceacting/sizematters/d-6.MP3' },
+                    { title: 'Dialogue Set D - Clip 07', subtitle: 'Size Matters alternate read', src: 'assets/voiceacting/sizematters/d-7.MP3' },
+                    { title: 'Dialogue Set D - Clip 08', subtitle: 'Size Matters alternate read', src: 'assets/voiceacting/sizematters/d-8.MP3' },
+                    { title: 'Dialogue Set D - Clip 09', subtitle: 'Size Matters alternate read', src: 'assets/voiceacting/sizematters/d-9.MP3' },
+                    { title: 'Dialogue Set D - Clip 10', subtitle: 'Size Matters alternate read', src: 'assets/voiceacting/sizematters/d-10.MP3' },
+                    { title: 'Dialogue Set D - Clip 11', subtitle: 'Size Matters alternate read', src: 'assets/voiceacting/sizematters/d-11.MP3' },
+                    { title: 'Dialogue Set D - Clip 12', subtitle: 'Size Matters alternate read', src: 'assets/voiceacting/sizematters/d-12.MP3' },
+                    { title: 'Dialogue Set D - Clip 13', subtitle: 'Size Matters alternate read', src: 'assets/voiceacting/sizematters/d-13.MP3' }
+                ]
+            }
+        };
+
+        function openVoiceProject(projectId) {
+            const project = voiceProjects[projectId];
+            if (!project) return;
+            openVoiceModal(project);
+        }
+
+        function openVoiceModal(project) {
+            const modal = document.getElementById('voiceModal');
+            const title = document.getElementById('voiceModalTitle');
+            const subtitle = document.getElementById('voiceModalSubtitle');
+            const image = document.getElementById('voiceModalImage');
+            const list = document.getElementById('voiceModalList');
+            if (!modal || !title || !subtitle || !image || !list) return;
+
+            title.textContent = project.title;
+            subtitle.textContent = project.subtitle;
+            image.src = project.image;
+            image.alt = `${project.title} voice acting project`;
+            list.textContent = '';
+
+            project.samples.forEach((sample) => {
+                const row = document.createElement('div');
+                row.className = 'voice-sample-row';
+
+                const meta = document.createElement('div');
+                const sampleTitle = document.createElement('p');
+                sampleTitle.className = 'voice-sample-title';
+                sampleTitle.textContent = sample.title;
+                const sampleSub = document.createElement('p');
+                sampleSub.className = 'voice-sample-sub';
+                sampleSub.textContent = sample.subtitle;
+                meta.append(sampleTitle, sampleSub);
+
+                const audio = document.createElement('audio');
+                audio.controls = true;
+                audio.preload = 'none';
+                const source = document.createElement('source');
+                source.src = sample.src;
+                source.type = 'audio/mpeg';
+                audio.appendChild(source);
+
+                row.append(meta, audio);
+                list.appendChild(row);
+            });
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeVoiceModal() {
+            const modal = document.getElementById('voiceModal');
+            if (!modal) return;
+            modal.querySelectorAll('audio').forEach((audio) => {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
 
         // Placeholder for coming soon sites
         function alertSoon(name) {
@@ -1411,11 +1697,13 @@
         window.addEventListener('click', (e) => {
             const gm = document.getElementById('gameModal');
             const cm = document.getElementById('certModal');
-            const am = document.getElementById('artModal'); 
+            const am = document.getElementById('artModal');
+            const vm = document.getElementById('voiceModal');
 
             if (gm && !gm.classList.contains('hidden') && e.target === gm) closeGameModal();
             if (cm && !cm.classList.contains('hidden') && e.target === cm) closeCert();
             if (am && !am.classList.contains('hidden') && e.target === am) closeArtModal();
+            if (vm && !vm.classList.contains('hidden') && e.target === vm) closeVoiceModal();
         });
 
         // keyboard escape to close modals
@@ -1424,27 +1712,40 @@
                 closeGameModal();
                 closeCert();
                 closeArtModal();
+                closeVoiceModal();
             }
         });
 
 
-        // Filter buttons
-        const artSection = document.getElementById('art');
-        const artGrid = document.getElementById('art-grid');
-        const filterButtons = artSection ? artSection.querySelectorAll('.filter-btn') : [];
-        const artItems = artGrid ? artGrid.querySelectorAll('.art-item') : [];
+        // Filter groups
+        function setupFilterGroup(sectionId, buttonSelector, itemSelector, dataKey) {
+            const section = document.getElementById(sectionId);
+            const buttons = section ? section.querySelectorAll(buttonSelector) : [];
+            const items = section ? section.querySelectorAll(itemSelector) : [];
+            if (buttons.length === 0 || items.length === 0) return;
 
-        filterButtons.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                const category = btn.getAttribute('data-category');
-                filterButtons.forEach((b) => b.classList.remove('bg-cyan-600', 'text-white'));
-                btn.classList.add('bg-cyan-600', 'text-white');
+            buttons.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const value = btn.getAttribute(`data-${dataKey}`);
 
-                artItems.forEach((item) => {
-                    item.style.display = (category === 'all' || item.dataset.category === category) ? '' : 'none';
+                    buttons.forEach((button) => {
+                        button.classList.remove('bg-cyan-500', 'bg-cyan-600', 'text-white', 'font-medium');
+                        button.classList.add('bg-gray-800', 'text-gray-300');
+                    });
+
+                    btn.classList.remove('bg-gray-800', 'text-gray-300');
+                    btn.classList.add('bg-cyan-500', 'text-white', 'font-medium');
+
+                    items.forEach((item) => {
+                        item.style.display = (value === 'all' || item.dataset[dataKey] === value) ? '' : 'none';
+                    });
                 });
             });
-        });
+        }
+
+        setupFilterGroup('art', '.filter-btn', '.art-item', 'category');
+        setupFilterGroup('voice', '.voice-filter-btn', '.voice-item', 'project');
+        setupFilterGroup('music', '.music-filter-btn', '.music-project-card', 'project');
 
         // Animate skill bars when section enters view
         const skillFills = document.querySelectorAll('.skill-fill');
