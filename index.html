@@ -1,0 +1,1676 @@
+﻿<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>ALDRECK // PORTFOLIO.EXE</title>
+        <link rel="icon" type="image/png" href="assets/img/Grandeur.png" />
+
+        <!-- Tailwind CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+            <link rel="stylesheet" href="assets/css/style.css">
+
+    </head>
+    <body class="portfolio-shell bg-gray-950 text-gray-100 antialiased">
+    <div id="bootLoader" class="boot-loader" role="status" aria-live="polite">
+        <div class="boot-terminal">
+            <div class="boot-terminal-bar">
+                <span>ALDRECK // PORTFOLIO.EXE</span>
+                <button id="bootSkip" class="skip-boot" type="button">Skip</button>
+            </div>
+            <div class="boot-terminal-body">
+                <div class="boot-line"><span>Loading developer profile</span><span>Ready</span></div>
+                <div class="boot-line"><span>Mounting project archive</span><span>Ready</span></div>
+                <div class="boot-line"><span>Syncing soundtrack module</span><span>Ready</span></div>
+                <div class="boot-line"><span>Rendering achievements</span><span>Ready</span></div>
+                <div class="boot-progress"><span></span></div>
+            </div>
+        </div>
+    </div>
+    <canvas id="fxParticles" class="ui-particle-canvas" aria-hidden="true"></canvas>
+    <div id="scrollProgress" class="top-progress" aria-hidden="true"><span id="scrollProgressBar" class="top-progress-bar"></span></div>
+
+    <!-- NAVBAR -->
+    <header class="hud-header fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-sm border-b border-gray-800">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <a href="#hero" class="flex items-center gap-3">
+            <span class="brand-tag text-xl">ALDRECK</span>
+            <span class="version-chip hidden sm:inline-flex">Build 2026.09.19</span>
+        </a>
+
+        <ul class="hidden xl:flex items-center gap-2 text-[0.82rem] text-gray-300">
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#about">About</a></li>
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#quests">Quests</a></li>
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#skills">Skills</a></li>
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#thesis">Docs</a></li>
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#project-showcase">Showreel</a></li>
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#games">Games</a></li>
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#art">Art Gallery</a></li>
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#voice">Voice</a></li>
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#music">Music</a></li>
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#achievements">Achievements</a></li>
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#certificates">Certs</a></li>
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#changelog">Log</a></li>
+            <li><a class="nav-link hover:text-cyan-400 transition" href="#contact">Contact</a></li>
+        </ul>
+
+        <button id="menuBtn" class="xl:hidden p-2">
+            <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+        </nav>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="hidden xl:hidden border-t border-gray-800 bg-gray-900/95">
+        <div class="px-6 py-4 flex flex-col gap-3">
+            <a href="#about" class="nav-link text-gray-300 hover:text-cyan-400">About</a>
+            <a href="#quests" class="nav-link text-gray-300 hover:text-cyan-400">Current Quests</a>
+            <a href="#skills" class="nav-link text-gray-300 hover:text-cyan-400">Skills</a>
+            <a href="#thesis" class="nav-link text-gray-300 hover:text-cyan-400">Docs</a>
+            <a href="#project-showcase" class="nav-link text-gray-300 hover:text-cyan-400">Showreel</a>
+            <a href="#games" class="nav-link text-gray-300 hover:text-cyan-400">Games</a>
+            <a href="#art" class="nav-link text-gray-300 hover:text-cyan-400">Art Gallery</a>
+            <a href="#voice" class="nav-link text-gray-300 hover:text-cyan-400">Voice Acting</a>
+            <a href="#music" class="nav-link text-gray-300 hover:text-cyan-400">Music</a>
+            <a href="#achievements" class="nav-link text-gray-300 hover:text-cyan-400">Achievements</a>
+            <a href="#certificates" class="nav-link text-gray-300 hover:text-cyan-400">Certificates</a>
+            <a href="#changelog" class="nav-link text-gray-300 hover:text-cyan-400">Changelog</a>
+            <a href="#contact" class="nav-link text-gray-300 hover:text-cyan-400">Contact</a>
+        </div>
+        </div>
+    </header>
+
+    <main class="pt-24">
+
+        <!-- ME -->
+        <section id="hero" class="hero-stage flex items-start px-6 pt-8 md:pt-12">
+            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[minmax(0,1.1fr)_minmax(20rem,0.9fr)] gap-8 items-center relative z-10">
+                <div class="order-2 lg:order-1 text-center lg:text-left hero-copy p-6 md:p-8">
+                    <p class="hero-command mb-3">Now running: portfolio.exe</p>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">ALDRECK // <span class="brand-highlight">PORTFOLIO.EXE</span></h1>
+                    <p class="text-gray-300 text-lg md:text-xl mb-8 max-w-2xl">
+                    Game Developer, Gameplay Programmer, Technical Game Designer, and Composer building interactive projects through systems, story, music, visual production, and playable prototypes.
+                    </p>
+
+                    <div class="quick-access-grid mb-8 text-left">
+                        <a href="#games" class="quick-access-card">
+                            <p class="text-cyan-300 font-semibold">Mission Select</p>
+                            <p class="text-sm text-gray-400">Games, prototypes, and playable work.</p>
+                        </a>
+                        <a href="#quests" class="quick-access-card">
+                            <p class="text-cyan-300 font-semibold">Current Quests</p>
+                            <p class="text-sm text-gray-400">Ongoing goals and development tracks.</p>
+                        </a>
+                        <a href="#music" class="quick-access-card">
+                            <p class="text-cyan-300 font-semibold">Sound Archive</p>
+                            <p class="text-sm text-gray-400">Project-based OST collections.</p>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                    <a href="#games" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 rounded-full text-white transition">View Projects</a>
+                    <a href="#achievements" class="px-6 py-3 border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-gray-900 rounded-full transition">Achievements</a>
+                    <a href="#contact" class="px-6 py-3 border border-gray-700 text-gray-300 hover:bg-gray-800 rounded-full transition">Contact</a>
+                    </div>
+
+                    <div class="build-strip">
+                        <span>Build 2026.09.19</span>
+                        <span>Portfolio status: live development</span>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <div class="hero-profile-card">
+                        <div class="system-bar">
+                            <span>Player Profile</span>
+                            <span class="status-chip">Online</span>
+                        </div>
+                        <div id="heroImageShell" class="hero-image-shell">
+                            <img
+                                id="heroImage"
+                                src="assets/img/Drecku.png"
+                                alt="Aldreck portrait"
+                                class="w-full aspect-[4/3] object-cover"
+                            >
+                        </div>
+                        <div class="p-4">
+                            <div class="grid grid-cols-3 gap-3 text-center mb-4">
+                                <div class="quick-access-card p-3">
+                                    <p class="text-xl font-bold text-cyan-300">6+</p>
+                                    <p class="text-xs text-gray-400">Projects</p>
+                                </div>
+                                <div class="quick-access-card p-3">
+                                    <p class="text-xl font-bold text-cyan-300">20</p>
+                                    <p class="text-xs text-gray-400">OST Tracks</p>
+                                </div>
+                                <div class="quick-access-card p-3">
+                                    <p class="text-xl font-bold text-cyan-300">21</p>
+                                    <p class="text-xs text-gray-400">Voice Clips</p>
+                                </div>
+                            </div>
+
+                            <div class="soundtrack-player">
+                                <div class="flex items-center justify-between gap-3 mb-3">
+                                    <div>
+                                        <p class="text-cyan-300 font-semibold">Soundtrack Player</p>
+                                        <p id="soundtrackTitle" class="text-sm text-gray-400">Alice's Dilemma - Usurpers: Freedom</p>
+                                    </div>
+                                    <span class="version-chip">OST</span>
+                                </div>
+                                <audio id="globalSoundtrack" controls preload="none">
+                                    <source id="globalSoundtrackSource" src="assets/music/usurpers/Battle Theme 1(Alice's Theme, Who are we).mp3" type="audio/mpeg">
+                                </audio>
+                                <div class="grid gap-2 mt-3">
+                                    <button class="track-button active" type="button" data-title="Alice's Dilemma - Usurpers: Freedom" data-src="assets/music/usurpers/Battle Theme 1(Alice's Theme, Who are we).mp3">Usurpers: Freedom</button>
+                                    <button class="track-button" type="button" data-title="Opus Ethnica - Glide or Crash" data-src="assets/music/glideorcrash/OpusEthnica.mp3">Glide or Crash</button>
+                                    <button class="track-button" type="button" data-title="It's SOO BIG! - Size Matters" data-src="assets/music/sizematters/It's SOO BIG!.mp3">Size Matters</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="py-20">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch fade-item opacity-0 translate-y-6 transition duration-700">
+                    <article class="lg:col-span-2 rounded-2xl border border-cyan-500/30 bg-[#1a162a]/85 p-6 backdrop-blur-sm">
+                        <span class="section-kicker">Profile Module</span>
+                        <h2 class="text-3xl md:text-4xl section-heading mb-5">Aldreck Paul Obenario</h2>
+                        <p class="text-gray-300 leading-relaxed text-lg mb-6">
+                            I build game experiences from concept to playable prototype. My work combines system design, storytelling, music composition, and 2D/3D production with implementation in Unity and C#.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            Contributed to Lamina Studios, collaborating on projects under Pixel Rock and Omen IV as part of a multidisciplinary Unreal Engine development team.
+                        </p>
+                        <div class="grid grid-cols-3 gap-3 text-center mb-6">
+                            <div class="rounded-xl border border-cyan-500/40 bg-black/20 py-3">
+                                <p class="text-2xl font-bold text-cyan-300">6+</p>
+                                <p class="text-xs text-gray-400">Projects</p>
+                            </div>
+                            <div class="rounded-xl border border-cyan-500/40 bg-black/20 py-3">
+                                <p class="text-2xl font-bold text-cyan-300">4</p>
+                                <p class="text-xs text-gray-400">Core Roles</p>
+                            </div>
+                            <div class="rounded-xl border border-cyan-500/40 bg-black/20 py-3">
+                                <p class="text-2xl font-bold text-cyan-300">1</p>
+                                <p class="text-xs text-gray-400">Capstone Game</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="lg:col-span-3 rounded-2xl border border-cyan-500/30 bg-[#171325]/90 p-6 md:p-8">
+                        <span class="section-kicker">Role Loadout</span>
+                        <h3 class="text-2xl section-heading mb-5">Current Focus Areas</h3>
+                        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                            <div class="rounded-xl border border-cyan-500/30 bg-[#221a35]/70 p-4">
+                                <h4 class="text-lg text-cyan-300 font-semibold mb-2">Game Systems</h4>
+                                <p class="text-gray-300">Combat loops, progression logic, and encounter structure for replayable gameplay.</p>
+                            </div>
+                            <div class="rounded-xl border border-cyan-500/30 bg-[#221a35]/70 p-4">
+                                <h4 class="text-lg text-cyan-300 font-semibold mb-2">Lore & Narrative</h4>
+                                <p class="text-gray-300">Narrative design, world rules, and story hooks that support player motivation.</p>
+                            </div>
+                            <div class="rounded-xl border border-cyan-500/30 bg-[#221a35]/70 p-4">
+                                <h4 class="text-lg text-cyan-300 font-semibold mb-2">Game Design</h4>
+                                <p class="text-gray-300">Core concept designs that brings fictional ideas into detailed steps.</p>
+                            </div>
+                            <div class="rounded-xl border border-cyan-500/30 bg-[#221a35]/70 p-4">
+                                <h4 class="text-lg text-cyan-300 font-semibold mb-2">Music Composition</h4>
+                                <p class="text-gray-300">Theme-driven composition and ambience that reinforce scene and pacing.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Unity (C#)</span>
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Unreal Engine</span>
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Autodesk Maya</span>
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Game Design</span>
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Music Composition</span>
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">2D / 3D Art</span>
+                            <span class="px-4 py-2 bg-gray-800 border border-cyan-500 text-cyan-300 rounded-full text-sm">Frontend Dev</span>
+                        </div>
+
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURRENT QUESTS -->
+        <section id="quests" class="py-20">
+            <div class="max-w-6xl mx-auto px-6 section-shell p-6 md:p-8 fade-item opacity-0 translate-y-6 transition duration-700">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-8">
+                    <div>
+                        <span class="section-kicker">Live Objectives</span>
+                        <h2 class="text-3xl md:text-4xl font-bold section-heading mb-3">Current Quests</h2>
+                        <p class="text-gray-400 max-w-3xl">Ongoing work that keeps the portfolio moving forward as a living development archive.</p>
+                    </div>
+                    <span class="version-chip">Quest Log Active</span>
+                </div>
+
+                <div class="quest-grid">
+                    <article class="quest-card">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <h3 class="text-xl font-semibold text-cyan-400">Filipino Horror Game Jam 2026</h3>
+                            <span class="quest-status">Queued</span>
+                        </div>
+                        <p class="text-gray-300 text-sm">Participate in the Filipino Horror Game Jam 2026 hosted by Murushi and other organizers, then develop a horror game for the event.</p>
+                    </article>
+
+                    <article class="quest-card">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <h3 class="text-xl font-semibold text-cyan-400">Universal Input System</h3>
+                            <span class="quest-status">In Development</span>
+                        </div>
+                        <p class="text-gray-300 text-sm">Build a reusable Unity input system for multiple devices and platforms using clean architecture, interfaces, dependency injection, and modular design.</p>
+                    </article>
+
+                    <article class="quest-card">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <h3 class="text-xl font-semibold text-cyan-400">Personal Game Development</h3>
+                            <span class="quest-status">Active</span>
+                        </div>
+                        <p class="text-gray-300 text-sm">Continue developing, prototyping, and experimenting with new game projects.</p>
+                    </article>
+
+                    <article class="quest-card">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <h3 class="text-xl font-semibold text-cyan-400">Music & Composition</h3>
+                            <span class="quest-status">Active</span>
+                        </div>
+                        <p class="text-gray-300 text-sm">Keep composing game music and expanding the personal soundtrack portfolio by project.</p>
+                    </article>
+
+                    <article class="quest-card">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <h3 class="text-xl font-semibold text-cyan-400">Portfolio Development</h3>
+                            <span class="quest-status">Active</span>
+                        </div>
+                        <p class="text-gray-300 text-sm">Continuously improve, reorganize, and expand this portfolio website as new work is completed.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="py-20">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="skills-shell rounded-2xl p-6 md:p-8 fade-item opacity-0 translate-y-6 transition duration-700">
+                    <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+                        <div>
+                            <span class="section-kicker">Character Attributes</span>
+                            <h2 class="text-3xl md:text-4xl font-bold section-heading">Skill Stats</h2>
+                        </div>
+                        <span class="version-chip">RPG Sheet</span>
+                    </div>
+
+                    <div class="stat-grid">
+                        <article class="stat-card"><div class="flex items-start justify-between gap-3"><div><p class="stat-code">UE</p><h3 class="text-lg font-semibold text-gray-100">Unreal Engine</h3><p class="text-sm text-gray-400">Beginner</p></div><p class="stat-value">59</p></div><div class="skill-track"><div class="skill-fill" data-level="59"></div></div></article>
+                        <article class="stat-card"><div class="flex items-start justify-between gap-3"><div><p class="stat-code">PRS</p><h3 class="text-lg font-semibold text-gray-100">Perseverance</h3><p class="text-sm text-gray-400">Expert</p></div><p class="stat-value">85</p></div><div class="skill-track"><div class="skill-fill" data-level="85"></div></div></article>
+                        <article class="stat-card"><div class="flex items-start justify-between gap-3"><div><p class="stat-code">CRT</p><h3 class="text-lg font-semibold text-gray-100">Critical Thinking</h3><p class="text-sm text-gray-400">Advanced</p></div><p class="stat-value">80</p></div><div class="skill-track"><div class="skill-fill" data-level="80"></div></div></article>
+                        <article class="stat-card"><div class="flex items-start justify-between gap-3"><div><p class="stat-code">COM</p><h3 class="text-lg font-semibold text-gray-100">Communication</h3><p class="text-sm text-gray-400">Competent</p></div><p class="stat-value">64</p></div><div class="skill-track"><div class="skill-fill" data-level="64"></div></div></article>
+                        <article class="stat-card"><div class="flex items-start justify-between gap-3"><div><p class="stat-code">CRV</p><h3 class="text-lg font-semibold text-gray-100">Creativity</h3><p class="text-sm text-gray-400">Advanced</p></div><p class="stat-value">75</p></div><div class="skill-track"><div class="skill-fill" data-level="75"></div></div></article>
+                        <article class="stat-card"><div class="flex items-start justify-between gap-3"><div><p class="stat-code">PM</p><h3 class="text-lg font-semibold text-gray-100">Project Management</h3><p class="text-sm text-gray-400">Competent</p></div><p class="stat-value">70</p></div><div class="skill-track"><div class="skill-fill" data-level="70"></div></div></article>
+                        <article class="stat-card"><div class="flex items-start justify-between gap-3"><div><p class="stat-code">ADP</p><h3 class="text-lg font-semibold text-gray-100">Adaptability</h3><p class="text-sm text-gray-400">Competent</p></div><p class="stat-value">64</p></div><div class="skill-track"><div class="skill-fill" data-level="64"></div></div></article>
+                        <article class="stat-card"><div class="flex items-start justify-between gap-3"><div><p class="stat-code">WEB</p><h3 class="text-lg font-semibold text-gray-100">Frontend Development</h3><p class="text-sm text-gray-400">HTML / CSS / JavaScript</p></div><p class="stat-value">80</p></div><div class="skill-track"><div class="skill-fill" data-level="80"></div></div></article>
+                        <article class="stat-card"><div class="flex items-start justify-between gap-3"><div><p class="stat-code">VOX</p><h3 class="text-lg font-semibold text-gray-100">Voice Acting</h3><p class="text-sm text-gray-400">Novice</p></div><p class="stat-value">20</p></div><div class="skill-track"><div class="skill-fill" data-level="20"></div></div></article>
+                        <article class="stat-card"><div class="flex items-start justify-between gap-3"><div><p class="stat-code">UNT</p><h3 class="text-lg font-semibold text-gray-100">Unity / C#</h3><p class="text-sm text-gray-400">Advanced</p></div><p class="stat-value">80</p></div><div class="skill-track"><div class="skill-fill" data-level="80"></div></div></article>
+                        <article class="stat-card"><div class="flex items-start justify-between gap-3"><div><p class="stat-code">OST</p><h3 class="text-lg font-semibold text-gray-100">Music Composition</h3><p class="text-sm text-gray-400">Advanced</p></div><p class="stat-value">76</p></div><div class="skill-track"><div class="skill-fill" data-level="76"></div></div></article>
+                        <article class="stat-card"><div class="flex items-start justify-between gap-3"><div><p class="stat-code">M3D</p><h3 class="text-lg font-semibold text-gray-100">Autodesk Maya</h3><p class="text-sm text-gray-400">Advanced</p></div><p class="stat-value">72</p></div><div class="skill-track"><div class="skill-fill" data-level="72"></div></div></article>
+                        <article class="stat-card"><div class="flex items-start justify-between gap-3"><div><p class="stat-code">DSN</p><h3 class="text-lg font-semibold text-gray-100">Game Design</h3><p class="text-sm text-gray-400">Advanced</p></div><p class="stat-value">80</p></div><div class="skill-track"><div class="skill-fill" data-level="80"></div></div></article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THESIS & DOCUMENTS -->
+        <section id="thesis" class="py-20">
+            <div class="max-w-6xl mx-auto px-6 section-shell rounded-2xl p-6 md:p-8 fade-item opacity-0 translate-y-6 transition duration-700">
+                <span class="section-kicker">Documentation</span>
+                <h2 class="text-3xl md:text-4xl font-bold section-heading mb-3">Thesis & Documents</h2>
+                <p class="text-gray-400 mb-8 max-w-3xl">
+                    Core project documentation covering narrative structure, gameplay systems, and production planning.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a
+                        href="https://docs.google.com/document/d/17AoBZVpaRd5m9ErvbaOQyEH7CeRmc4dM/edit?usp=sharing&ouid=113043589349280326277&rtpof=true&sd=true"
+                        class="group media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition p-4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <h3 class="text-lg font-semibold text-cyan-400 mb-2">Thesis: Usurpers: Freedom</h3>
+                        <p class="text-gray-300 text-sm">Full thesis writeup of the game direction, systems, and development process.</p>
+                    </a>
+
+                    <a
+                        href="https://docs.google.com/document/d/1etXinGwaqqHfHUi95OXWhA23BS76RFwg/edit?usp=sharing&ouid=113043589349280326277&rtpof=true&sd=true"
+                        class="group media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition p-4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <h3 class="text-lg font-semibold text-cyan-400 mb-2">Usurpers GDD</h3>
+                        <p class="text-gray-300 text-sm">Game Design Document detailing systems, progression, and core loop decisions.</p>
+                    </a>
+
+                    <a
+                        href="https://docs.google.com/document/d/1egxtVFLp0bLWDPHQPSo--fpj1RYJmqcb/edit?usp=sharing&ouid=104630286592847166252&rtpof=true&sd=true"
+                        class="group media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition p-4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <h3 class="text-lg font-semibold text-cyan-400 mb-2">Glide or Clash GDD</h3>
+                        <p class="text-gray-300 text-sm">Design documentation for Bilolo Games project scope and mechanics.</p>
+                    </a>
+                </div>
+
+                <div class="mt-10">
+                    <h3 class="text-2xl section-heading mb-3">Just-for-Fun Game Reviews</h3>
+                    <p class="text-gray-400 mb-6 max-w-3xl">
+                        A casual set of personal game review writeups I made for fun.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <a href="https://drive.google.com/file/d/1ftiybjhIOGdz653oC54hHYFyhYxwRT-j/view?usp=sharing" class="group media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition p-4" target="_blank" rel="noopener noreferrer">
+                            <h4 class="text-lg font-semibold text-cyan-400 mb-2">Hack-and-Slash Review</h4>
+                            <p class="text-gray-300 text-sm">Breakdown of combat flow, enemy encounter pacing, and how action systems support player mastery.</p>
+                        </a>
+
+                        <a href="https://docs.google.com/document/d/1cBuZzxW8GusT8Dzjm_FZavxfeCtXawL3fzdS0qmU2M4/edit?usp=sharing" class="group media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition p-4" target="_blank" rel="noopener noreferrer">
+                            <h4 class="text-lg font-semibold text-cyan-400 mb-2">RTS Review</h4>
+                            <p class="text-gray-300 text-sm">Review of macro and micro decision-making, resource economy, and strategic clarity in real-time play.</p>
+                        </a>
+
+                        <a href="https://docs.google.com/document/d/15iEASDXiF1fJJA9opP5sy6HkuYNRl98hOhiro17qe4Y/edit?usp=sharing" class="group media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition p-4" target="_blank" rel="noopener noreferrer">
+                            <h4 class="text-lg font-semibold text-cyan-400 mb-2">Action Adventure Review</h4>
+                            <p class="text-gray-300 text-sm">Analysis of exploration-combat balance, progression structure, and narrative integration with mechanics.</p>
+                        </a>
+
+                        <a href="https://docs.google.com/document/d/1Y2BccFSMZkg5PQDO9uZVsQWPxQzXbYFY6LuULPrGHVA/edit?usp=sharing" class="group media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition p-4" target="_blank" rel="noopener noreferrer">
+                            <h4 class="text-lg font-semibold text-cyan-400 mb-2">Puzzle Review</h4>
+                            <p class="text-gray-300 text-sm">Evaluation of puzzle readability, difficulty ramp, and reward structure for sustained engagement.</p>
+                        </a>
+
+                        <a href="https://docs.google.com/document/d/1PZKToMJXn4CtH5YKw3dAJPIs5CzNQBCzym5SnMop2n4/edit?usp=sharing" class="group media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition p-4" target="_blank" rel="noopener noreferrer">
+                            <h4 class="text-lg font-semibold text-cyan-400 mb-2">FPS Review</h4>
+                            <p class="text-gray-300 text-sm">Review of gunplay feel, map flow, feedback systems, and pacing of first-person combat encounters.</p>
+                        </a>
+
+                        <a href="https://docs.google.com/document/d/1QaA8ChDq9HAlX7Ds5w6trocNpe0hztlxdMwUvxZXYcg/edit?usp=sharing" class="group media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition p-4" target="_blank" rel="noopener noreferrer">
+                            <h4 class="text-lg font-semibold text-cyan-400 mb-2">MMORPG Review</h4>
+                            <p class="text-gray-300 text-sm">Assessment of class identity, progression loops, social systems, and long-term retention design.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- PROJECT SHOWCASE CAROUSEL -->
+        <section id="project-showcase" class="py-20">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="feature-carousel-shell rounded-2xl p-6 md:p-8 fade-item opacity-0 translate-y-6 transition duration-700">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <span class="section-kicker">Showreel</span>
+                            <h2 class="text-3xl md:text-4xl font-bold section-heading">Project Showcase</h2>
+                        </div>
+                        <span class="text-sm text-gray-400">Gameplay Reels</span>
+                    </div>
+
+                    <p class="text-gray-400 mb-6 max-w-3xl">
+                        A quick look at selected projects I have worked on and currently support in production.
+                    </p>
+
+                    <div class="feature-carousel-viewport" id="featuredViewport">
+                        <div class="feature-carousel-track" id="featuredTrack">
+                            <article class="feature-carousel-slide p-1">
+                                <div class="aspect-video rounded-xl overflow-hidden bg-black/35">
+                                    <iframe
+                                        class="w-full h-full"
+                                        src="https://www.youtube-nocookie.com/embed/H5vMvBB0UFE?rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+                                        title="Project showcase video 1"
+                                        loading="lazy"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </article>
+
+                            <article class="feature-carousel-slide p-1">
+                                <div class="aspect-video rounded-xl overflow-hidden bg-black/35">
+                                    <iframe
+                                        class="w-full h-full"
+                                        src="https://www.youtube.com/embed/qqLX8aLb8RY?si=iAQbDCfTb53IB3oM&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+                                        title="Project showcase video 2"
+                                        loading="lazy"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </article>
+
+                            <article class="feature-carousel-slide p-1">
+                                <div class="aspect-video rounded-xl overflow-hidden bg-black/35">
+                                    <iframe
+                                        class="w-full h-full"
+                                        src="https://www.youtube.com/embed/5soik326gkQ?si=09YkPn-xo-Ao0vn7&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+                                        title="Project showcase video 3"
+                                        loading="lazy"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </article>
+
+                            <article class="feature-carousel-slide p-1">
+                                <div class="aspect-video rounded-xl overflow-hidden bg-black/35">
+                                    <iframe
+                                        class="w-full h-full"
+                                        src="https://www.youtube.com/embed/z6lz4po5iVI?si=Z-TDC8emGPOMcQ5w&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+                                        title="Project showcase video 4"
+                                        loading="lazy"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </article>
+
+                            <article class="feature-carousel-slide p-1">
+                                <div class="aspect-video rounded-xl overflow-hidden bg-black/35">
+                                    <iframe
+                                        class="w-full h-full"
+                                        src="https://www.youtube.com/embed/ZwAxnJNRNaE?si=-bAzdCKjvuF6hl9B&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+                                        title="Project showcase video 4"
+                                        loading="lazy"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 flex items-center justify-between">
+                        <div class="flex items-center gap-2" id="featuredDots" aria-label="Carousel pagination"></div>
+                        <div class="flex items-center gap-2">
+                            <button id="featuredPrev" class="px-4 py-2 rounded-full border border-gray-700 text-gray-300 hover:bg-gray-800 transition" aria-label="Previous slide">Prev</button>
+                            <button id="featuredNext" class="px-4 py-2 rounded-full bg-cyan-500 hover:bg-cyan-600 text-white transition" aria-label="Next slide">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- GAMES -->
+        <section id="games" class="py-20">
+            <div class="max-w-6xl mx-auto px-6 section-shell rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+                    <div>
+                        <span class="section-kicker">Mission Select</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-3 fade-item opacity-0 translate-y-6 transition duration-700">Games</h2>
+                        <p class="text-gray-400 max-w-3xl">Playable projects, prototypes, tutorials, and production contributions presented as project selections.</p>
+                    </div>
+                    <span class="version-chip">7 Entries</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="group game-card shadow-lg transform transition hover:-translate-y-2">
+                        <div class="relative">
+                            <img src="assets/img/usurpers-thumb.png" alt="Usurpers: Freedom" class="w-full object-cover">
+                            <span class="game-status">Capstone</span>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+                            <div class="absolute left-4 bottom-4">
+                                <h3 class="text-lg font-bold text-white">Usurpers: Freedom</h3>
+                                <p class="text-sm text-gray-300">Dungeon-crawler roguelike with deep lore and co-op survival waves.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-wrap items-center justify-between gap-3">
+                            <button onclick="openGameModal('Usurpers: Freedom','A dungeon-crawling roguelike blending storytelling and combat, where players seek freedom within a cursed labyrinth.','assets/img/usurpers-thumb.png','https://drive.google.com/drive/folders/1epmU8k1ekTDrBfbfmxxN8HRnrunpEuCt?usp=sharing','Download')" class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
+                            <a href="https://drive.google.com/drive/folders/1epmU8k1ekTDrBfbfmxxN8HRnrunpEuCt?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
+                        </div>
+                    </article>
+
+                    <article class="group game-card shadow-lg transform transition hover:-translate-y-2">
+                        <div class="relative">
+                            <img src="assets/img/bullethell-thumb.png" alt="Bullet Hell" class="w-full object-cover">
+                            <span class="game-status">MonoGame</span>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+                            <div class="absolute left-4 bottom-4">
+                                <h3 class="text-lg font-bold text-white">Bullet Hell</h3>
+                                <p class="text-sm text-gray-300">Fast-paced arcade shooter focusing on precise movement and pattern dodging.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-wrap items-center justify-between gap-3">
+                            <button onclick="openGameModal('Bullet Hell','A fast-paced arcade shooter focusing on dodging patterns and precise movement. My first ever game.','assets/img/bullethell-thumb.png','https://drive.google.com/drive/folders/1b9kDy4fTHTZOfctkiCMggJPmzrUEWBlG?usp=sharing','Download')" class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
+                            <a href="https://drive.google.com/drive/folders/1b9kDy4fTHTZOfctkiCMggJPmzrUEWBlG?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
+                        </div>
+                    </article>
+
+                    <article class="group game-card shadow-lg transform transition hover:-translate-y-2">
+                        <div class="relative">
+                            <img src="assets/img/matching-thumb.png" alt="Matching Card Game" class="w-full object-cover">
+                            <span class="game-status">Puzzle</span>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+                            <div class="absolute left-4 bottom-4">
+                                <h3 class="text-lg font-bold text-white">Matching Card Game</h3>
+                                <p class="text-sm text-gray-300">Casual puzzle game testing memory and pattern recognition.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-wrap items-center justify-between gap-3">
+                            <button onclick="openGameModal('Matching Card Game','A casual puzzle game testing memory and focus through pattern recognition. My second and last MonoGame project.','assets/img/matching-thumb.png','https://drive.google.com/drive/folders/13UidUAk9dOEEUYLuUJJiwKlgayW0Xvfc?usp=sharing','Download')" class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
+                            <a href="https://drive.google.com/drive/folders/13UidUAk9dOEEUYLuUJJiwKlgayW0Xvfc?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
+                        </div>
+                    </article>
+
+                    <article class="group game-card shadow-lg transform transition hover:-translate-y-2">
+                        <div class="relative">
+                            <img src="assets/img/openworld-thumb.png" alt="Open World Tutorial" class="w-full object-cover">
+                            <span class="game-status">Tutorial</span>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+                            <div class="absolute left-4 bottom-4">
+                                <h3 class="text-lg font-bold text-white">Open World Tutorial</h3>
+                                <p class="text-sm text-gray-300">Directed tutorial showcasing world navigation and design principles.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-wrap items-center justify-between gap-3">
+                            <button onclick="openGameModal('Open World Tutorial','A directed tutorial project exploring game world navigation and design principles.','assets/img/openworld-thumb.png','https://www.youtube.com/watch?v=ndZnoE38mmM&list=PLJqgAlQY92wCnQ8HqS0sJWbVB6EKedSqk','Watch')" class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
+                            <a href="https://www.youtube.com/watch?v=ndZnoE38mmM&list=PLJqgAlQY92wCnQ8HqS0sJWbVB6EKedSqk" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Watch</a>
+                        </div>
+                    </article>
+
+                    <article class="group game-card shadow-lg transform transition hover:-translate-y-2">
+                        <div class="relative">
+                            <img src="assets/img/pgdx2026.jpg" alt="Glide or Crash" class="w-full object-cover">
+                            <span class="game-status">PGDX 2026</span>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+                            <div class="absolute left-4 bottom-4">
+                                <h3 class="text-lg font-bold text-white">Glide or Crash</h3>
+                                <p class="text-sm text-gray-300">Endless gliding game inspired by Temple Run, Touhou, and Demon Slayer.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-wrap items-center justify-between gap-3">
+                            <button onclick="openGameModal('Glide or Crash','An endless gliding game developed by Index as a collaborative project with Bilolo Games. Featured in PGDX Indie Game Stars 2026.','assets/img/design_front.png','https://bilologames.itch.io/glideorcrash','Download')" class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
+                            <a href="https://bilologames.itch.io/glideorcrash" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
+                        </div>
+                    </article>
+
+                    <article class="group game-card shadow-lg transform transition hover:-translate-y-2">
+                        <div class="relative">
+                            <img src="assets/img/ColdLight.png" alt="Cold Light" class="w-full object-cover">
+                            <span class="game-status">Completed</span>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+                            <div class="absolute left-4 bottom-4">
+                                <h3 class="text-lg font-bold text-white">Cold Light</h3>
+                                <p class="text-sm text-gray-300">Sound Designer and Musician contribution for a completed Unreal Engine project.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-wrap items-center justify-between gap-3">
+                            <button onclick="openGameModal('Cold Light','Completed project at Lamina Studios. Role: Sound Designer and Musician. Built in Unreal Engine.','assets/img/ColdLight.png','#music','View OST')" class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
+                            <a href="#music" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">View OST</a>
+                        </div>
+                    </article>
+
+                    <article class="group game-card shadow-lg transform transition hover:-translate-y-2">
+                        <div class="relative">
+                            <img src="assets/img/SizeMatters.png" alt="Size Matters" class="w-full object-cover">
+                            <span class="game-status">Omen IV</span>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+                            <div class="absolute left-4 bottom-4">
+                                <h3 class="text-lg font-bold text-white">Size Matters</h3>
+                                <p class="text-sm text-gray-300">Game Design, Technical Art, Music, voice, and minor programming in Unreal Engine.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-wrap items-center justify-between gap-3">
+                            <button onclick="openGameModal('Size Matters (Omen IV)','OJT project at Lamina Studios. Roles: Game Designer, Technical Artist, Musician, voice work, and minor programming. Built in Unreal Engine.','assets/img/SizeMatters.png','https://drive.google.com/drive/folders/1bsx_QohWPIwQ5xPrhk3hJ7nu0GSi-KjG?usp=sharing','Download')" class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">View Details</button>
+                            <a href="https://drive.google.com/drive/folders/1bsx_QohWPIwQ5xPrhk3hJ7nu0GSi-KjG?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Download</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- ART GALLERY -->
+        <section id="art" class="py-20 bg-gray-950">
+            <div class="max-w-6xl mx-auto px-6 media-shell rounded-2xl p-6 md:p-8">
+                <span class="section-kicker">Visual Art</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-6 fade-item opacity-0 translate-y-6 transition duration-700">Art Gallery</h2>
+                <p class="text-gray-400 mb-8 max-w-3xl">A focused collection of my 2D and 3D works showcasing style, technical production, and visual storytelling.</p>
+
+                <div class="media-toolbar rounded-xl p-4 flex flex-wrap items-center justify-between gap-3 mb-10">
+                    <p class="text-sm text-gray-400">Browse by category</p>
+                    <div class="flex flex-wrap gap-3">
+                        <button class="filter-btn px-4 py-2 rounded-lg bg-cyan-500 text-white text-sm font-medium" data-category="all">All</button>
+                        <button class="filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-category="3d">3D</button>
+                        <button class="filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-category="2d">2D</button>
+                    </div>
+                </div>
+
+                <div id="art-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" data-category="3d" onclick="openArtModal(['assets/art/Final%20Output.jpg','assets/art/Info.png','assets/art/W_Back.png','assets/art/W_Front.png','assets/art/W_Left.png','assets/art/W_Right.png','assets/art/lady.png'], '3D Character Model  - Selene Wasserglut')">
+                        <img src="assets/art/Final Output.jpg" alt="3D Model" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left"><p class="text-sm text-gray-300">3D Character Model  - Selene</p></div>
+                    </button>
+
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" data-category="3d" onclick="openArtModal(['assets/art/OBENARIO_SCIFI_WEAPON.png'], '3D Model  - Scifi Spear')">
+                        <img src="assets/art/OBENARIO_SCIFI_WEAPON.png" alt="3D Model" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left"><p class="text-sm text-gray-300">3D Model  - Scifi Spear</p></div>
+                    </button>
+
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" data-category="3d" onclick="openArtModal(['assets/art/wol.png'], '3D Model  - Wall Trim')">
+                        <img src="assets/art/wol.png" alt="3D Model" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left"><p class="text-sm text-gray-300">3D Model  - Wall Trim</p></div>
+                    </button>
+
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" data-category="3d" onclick="openArtModal(['assets/art/WashingMachine.png','assets/art/1a.jpg','assets/art/2a.jpg','assets/art/3a.jpg','assets/art/1b.png','assets/art/2b.png','assets/art/3b.png','assets/art/4.jpg','assets/art/NormalMap.png'], '3D Model  - Baked Washing Machine')">
+                        <img src="assets/art/WashingMachine.png" alt="3D Model" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left"><p class="text-sm text-gray-300">3D Model  - Baked Washing Machine</p></div>
+                    </button>
+
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" data-category="3d" onclick="openArtModal(['assets/art/other1.png','assets/art/other2.png','assets/art/chess.png'], '3D Scene  - Fully Rendered 3D Scenes')">
+                        <img src="assets/art/other1.png" alt="3D Scene" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left"><p class="text-sm text-gray-300">3D Scene  - Fully Rendered 3D Scenes</p></div>
+                    </button>
+
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" data-category="2d" onclick="openArtModal(['assets/art/r1.png','assets/art/r2.png','assets/art/r3.jpg','assets/art/r4.png','assets/art/r5.png','assets/art/r0.png'], '2D  - Traditional Drawings')">
+                        <img src="assets/art/r0.png" alt="2D Drawing" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left"><p class="text-sm text-gray-300">2D  - Traditional Drawings</p></div>
+                    </button>
+
+                    <button class="group art-item media-card bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" data-category="2d" onclick="openArtModal(['assets/art/d1.png','assets/art/d2.png','assets/art/d3.png','assets/art/d4.png'], '2D  - Digital Drawings')">
+                        <img src="assets/art/d4.png" alt="Digital Drawing" class="w-full h-56 object-cover">
+                        <div class="p-3 text-left"><p class="text-sm text-gray-300">2D  - Digital Drawings</p></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- VOICE ACTING -->
+        <section id="voice" class="py-20">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="audio-gallery-shell rounded-2xl p-6 md:p-8 fade-item opacity-0 translate-y-6 transition duration-700">
+                    <div class="audio-gallery-head">
+                        <div>
+                            <span class="section-kicker">Performance Reel</span>
+                            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">Voice Acting</h2>
+                            <p class="text-gray-300 max-w-2xl">Character dialogue samples grouped by project, with room for new roles and future reels.</p>
+                        </div>
+                        <div class="audio-stats-panel">
+                            <p class="text-2xl font-bold text-cyan-300">21</p>
+                            <p class="text-sm text-gray-400">Size Matters clips</p>
+                        </div>
+                    </div>
+
+                    <div class="media-toolbar rounded-xl p-4 flex flex-wrap items-center justify-between gap-3 mb-8">
+                        <p class="text-sm text-gray-400">Browse by project</p>
+                        <div class="flex flex-wrap gap-3">
+                            <button class="voice-filter-btn px-4 py-2 rounded-lg bg-cyan-500 text-white text-sm font-medium" data-project="all">All</button>
+                            <button class="voice-filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-project="sizematters">Size Matters</button>
+                        </div>
+                    </div>
+
+                    <div id="voice-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <article class="voice-item voice-card group shadow hover:scale-[1.01] transition" data-project="sizematters">
+                            <img src="assets/img/SizeMatters.png" alt="Size Matters voice acting reel" class="voice-cover">
+                            <div class="voice-card-body">
+                                <div class="audio-project-meta">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-cyan-400">Size Matters (Omen IV)</h3>
+                                        <p class="text-sm text-gray-400">Dialogue samples - Voice Acting</p>
+                                    </div>
+                                    <span class="voice-pill">21 clips</span>
+                                </div>
+                                <p class="text-gray-300 text-sm mt-3">In-game voice samples and alternate line reads recorded for the OJT project.</p>
+
+                                <div class="voice-preview-list">
+                                    <div class="voice-sample-row">
+                                        <div>
+                                            <p class="voice-sample-title">Preview Line 01</p>
+                                            <p class="voice-sample-sub">Size Matters - Dialogue Set 1</p>
+                                        </div>
+                                        <audio controls preload="none"><source src="assets/voiceacting/sizematters/1-1.MP3" type="audio/mpeg"></audio>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 flex flex-wrap gap-3">
+                                    <button onclick="openVoiceProject('sizematters')" class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-medium hover:bg-cyan-600 transition">Open Voice Reel</button>
+                                    <a href="#music" class="px-4 py-2 border border-gray-700 text-gray-300 rounded-full text-sm hover:bg-gray-800">Related OST</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MUSIC GALLERY -->
+        <section id="music" class="py-20">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="audio-gallery-shell rounded-2xl p-6 md:p-8 fade-item opacity-0 translate-y-6 transition duration-700">
+                    <div class="audio-gallery-head">
+                        <div>
+                            <span class="section-kicker">Original Soundtracks</span>
+                            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">Music Gallery</h2>
+                            <p class="text-gray-300 max-w-2xl">Project-based soundtrack collections from Usurpers, Time Paradox Rampage, Forge of Destiny, Glide or Crash, Cold Light, and Size Matters.</p>
+                        </div>
+                        <div class="audio-stats-panel">
+                            <p class="text-2xl font-bold text-cyan-300">20</p>
+                            <p class="text-sm text-gray-400">Tracks across 6 projects</p>
+                        </div>
+                    </div>
+
+                    <div class="media-toolbar rounded-xl p-4 flex flex-wrap items-center justify-between gap-3 mb-8">
+                        <p class="text-sm text-gray-400">Browse by project</p>
+                        <div class="flex flex-wrap gap-3">
+                            <button class="music-filter-btn px-4 py-2 rounded-lg bg-cyan-500 text-white text-sm font-medium" data-project="all">All</button>
+                            <button class="music-filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-project="usurpers">Usurpers</button>
+                            <button class="music-filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-project="tpr">Time Paradox</button>
+                            <button class="music-filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-project="tfd">Forge of Destiny</button>
+                            <button class="music-filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-project="glideorcrash">Glide or Crash</button>
+                            <button class="music-filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-project="coldlight">Cold Light</button>
+                            <button class="music-filter-btn px-4 py-2 rounded-lg bg-gray-800 text-gray-300 text-sm" data-project="sizematters">Size Matters</button>
+                        </div>
+                    </div>
+
+                    <div id="music-grid" class="audio-project-grid">
+                        <article class="music-project-card audio-project-card shadow transition" data-project="usurpers">
+                            <img src="assets/img/usurpers-thumb.png" alt="Usurpers: Freedom soundtrack cover" class="audio-project-cover">
+                            <div class="audio-project-body">
+                                <div class="audio-project-meta">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-cyan-400">Usurpers: Freedom</h3>
+                                        <p class="text-sm text-gray-400">OST - Composer & Sound Designer</p>
+                                    </div>
+                                    <span class="audio-pill">8 tracks</span>
+                                </div>
+                                <div class="audio-track-list">
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Alice's Dilemma (Who Are We?)</p><p class="audio-track-sub">Gb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/Battle Theme 1(Alice's Theme, Who are we).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">La Moisson Nocturne</p><p class="audio-track-sub">Bb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/Battle Theme 2 (Margaux's Battle Theme La Moisson Nocturne).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">The Voyager 2</p><p class="audio-track-sub">Bb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/Battle Theme 3(Shiori's Battle Theme, The Voyager 2).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">The Voyager 1 (Final Amargo)</p><p class="audio-track-sub">Bb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/Battle Theme 3 2nd Part(The Voyager 1, Final Amargo).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Sibling's Conflict (The Curator)</p><p class="audio-track-sub">Gb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/The Curator's Battle Theme (The Sibling's Conflict).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Main Theme (The Puer)</p><p class="audio-track-sub">Gb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/Main Theme(Puer's Theme, The Red Skies We Saw).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">The Puer LoFi Version</p><p class="audio-track-sub">Gb Minor</p></div><audio controls preload="none"><source src="assets/music/usurpers/Main Theme(Puer's Theme, The Red Skies We Saw) LoFi Version.mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Sommerschlaf Waltz (Summer Break)</p><p class="audio-track-sub">Original version</p></div><audio controls preload="none"><source src="assets/music/usurpers/Sommerschlaf Waltz Orignal Version.mp3" type="audio/mpeg"></audio></div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="music-project-card audio-project-card shadow transition" data-project="tpr">
+                            <img src="assets/img/KungFury.png" alt="Time Paradox Rampage soundtrack cover" class="audio-project-cover">
+                            <div class="audio-project-body">
+                                <div class="audio-project-meta">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-cyan-400">Time Paradox Rampage</h3>
+                                        <p class="text-sm text-gray-400">OST - Action themes</p>
+                                    </div>
+                                    <span class="audio-pill">4 tracks</span>
+                                </div>
+                                <div class="audio-track-list">
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Nihility</p><p class="audio-track-sub">Time Paradox Rampage OST</p></div><audio controls preload="none"><source src="assets/music/tpr/Nihility.mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Kung Fury</p><p class="audio-track-sub">Boss theme</p></div><audio controls preload="none"><source src="assets/music/tpr/Kung_Fury_Boss_Theme.mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Fury's Requiem</p><p class="audio-track-sub">Time Paradox Rampage OST</p></div><audio controls preload="none"><source src="assets/music/tpr/Fury's Requiem.mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Der Fuhrers Widerstand</p><p class="audio-track-sub">Time Paradox Rampage OST</p></div><audio controls preload="none"><source src="assets/music/tpr/Der%20F%C3%BChrers%20Widerstand.mp3" type="audio/mpeg"></audio></div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="music-project-card audio-project-card shadow transition" data-project="tfd">
+                            <img src="assets/img/forgedinfire.png" alt="The Forge Of Destiny soundtrack cover" class="audio-project-cover">
+                            <div class="audio-project-body">
+                                <div class="audio-project-meta">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-cyan-400">The Forge Of Destiny</h3>
+                                        <p class="text-sm text-gray-400">OST - Dramatic themes</p>
+                                    </div>
+                                    <span class="audio-pill">3 tracks</span>
+                                </div>
+                                <div class="audio-track-list">
+                                    <div class="audio-track-row"><div><p class="audio-track-title">A Destiny To Forge</p><p class="audio-track-sub">The Forge Of Destiny OST</p></div><audio controls preload="none"><source src="assets/music/tfd/A Destiny To Forge.mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">A Simple Melody, A Short Farewell</p><p class="audio-track-sub">The Forge Of Destiny OST</p></div><audio controls preload="none"><source src="assets/music/tfd/A Simple Melody, A Short Farewell.mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Against All Adversity</p><p class="audio-track-sub">The Forge Of Destiny OST</p></div><audio controls preload="none"><source src="assets/music/tfd/Against All Adversity.mp3" type="audio/mpeg"></audio></div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="music-project-card audio-project-card shadow transition" data-project="glideorcrash">
+                            <img src="assets/img/pgdx2026.jpg" alt="Glide or Crash soundtrack cover" class="audio-project-cover">
+                            <div class="audio-project-body">
+                                <div class="audio-project-meta">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-cyan-400">Glide or Crash</h3>
+                                        <p class="text-sm text-gray-400">OST - Featured game project</p>
+                                    </div>
+                                    <span class="audio-pill">1 track</span>
+                                </div>
+                                <div class="audio-track-list">
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Opus Ethnica</p><p class="audio-track-sub">Glide or Crash OST</p></div><audio controls preload="none"><source src="assets/music/glideorcrash/OpusEthnica.mp3" type="audio/mpeg"></audio></div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="music-project-card audio-project-card shadow transition" data-project="coldlight">
+                            <img src="assets/img/ColdLight.png" alt="Cold Light soundtrack cover" class="audio-project-cover">
+                            <div class="audio-project-body">
+                                <div class="audio-project-meta">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-cyan-400">Cold Light</h3>
+                                        <p class="text-sm text-gray-400">OST - Sound Designer & Musician</p>
+                                    </div>
+                                    <span class="audio-pill">3 tracks</span>
+                                </div>
+                                <div class="audio-track-list">
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Cold Light (Main Menu Version)</p><p class="audio-track-sub">Cold Light OST</p></div><audio controls preload="none"><source src="assets/music/coldlight/Cold%20Light%20(Main%20Menu%20Version).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">Cold Light (Full Version)</p><p class="audio-track-sub">Cold Light OST</p></div><audio controls preload="none"><source src="assets/music/coldlight/Cold%20Light(Full%20Version).mp3" type="audio/mpeg"></audio></div>
+                                    <div class="audio-track-row"><div><p class="audio-track-title">The Chase</p><p class="audio-track-sub">Cold Light OST</p></div><audio controls preload="none"><source src="assets/music/coldlight/The Chase.mp3" type="audio/mpeg"></audio></div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="music-project-card audio-project-card shadow transition" data-project="sizematters">
+                            <img src="assets/img/SizeMatters.png" alt="Size Matters soundtrack cover" class="audio-project-cover">
+                            <div class="audio-project-body">
+                                <div class="audio-project-meta">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-cyan-400">Size Matters</h3>
+                                        <p class="text-sm text-gray-400">OST - Omen IV project</p>
+                                    </div>
+                                    <span class="audio-pill">1 track</span>
+                                </div>
+                                <div class="audio-track-list">
+                                    <div class="audio-track-row"><div><p class="audio-track-title">It's SOO BIG!</p><p class="audio-track-sub">Size Matters OST</p></div><audio controls preload="none"><source src="assets/music/sizematters/It's SOO BIG!.mp3" type="audio/mpeg"></audio></div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section id="achievements" class="px-6 py-16 md:py-24">
+            <div class="max-w-7xl mx-auto">
+
+                <div class="section-shell p-6 md:p-8">
+
+                    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+                        <div>
+                            <p class="hero-command mb-2">Progress // Achievements</p>
+
+                            <h2 class="text-3xl md:text-4xl font-bold">
+                                Achievements
+                            </h2>
+
+                            <p class="text-gray-400 mt-2 max-w-2xl">
+                                Milestones, projects, and accomplishments earned throughout
+                                my development journey.
+                            </p>
+                        </div>
+
+                        <div class="achievement-rarity">
+                            PROFILE PROGRESS: ACTIVE
+                        </div>
+                    </div>
+
+                    <div class="achievement-grid">
+
+                        <!-- Achievement 1 -->
+                        <article class="achievement-card">
+                            <div>
+                                <span class="achievement-rarity">LEGENDARY</span>
+
+                                <h3 class="text-xl font-bold mt-4 text-white">
+                                    Capstone Architect
+                                </h3>
+
+                                <p class="text-gray-400 mt-2">
+                                    Developed <strong>Usurpers: Freedom</strong>, a
+                                    multiplayer dungeon-crawler roguelike capstone project
+                                    combining procedural generation, combat systems,
+                                    progression, lore, and cooperative gameplay.
+                                </p>
+                            </div>
+
+                            <div class="mt-6 text-sm text-gray-500">
+                                Achievement unlocked: Capstone Project Completed
+                            </div>
+                        </article>
+
+
+                        <!-- Achievement 2 -->
+                        <article class="achievement-card">
+                            <div>
+                                <span class="achievement-rarity">EPIC</span>
+
+                                <h3 class="text-xl font-bold mt-4 text-white">
+                                    Indie Game Star
+                                </h3>
+
+                                <p class="text-gray-400 mt-2">
+                                    <strong>Glide or Crash</strong> was featured in
+                                    PGDX Indie Game Stars 2026.
+                                </p>
+                            </div>
+
+                            <div class="mt-6 text-sm text-gray-500">
+                                Achievement unlocked: Industry Recognition
+                            </div>
+                        </article>
+
+
+                        <!-- Achievement 3 -->
+                        <article class="achievement-card">
+                            <div>
+                                <span class="achievement-rarity">EPIC</span>
+
+                                <h3 class="text-xl font-bold mt-4 text-white">
+                                    Composer Unlocked
+                                </h3>
+
+                                <p class="text-gray-400 mt-2">
+                                    Created original music for multiple game projects,
+                                    including Usurpers' Freedom, Time Paradox Rampage,
+                                    The Forge of Destiny, Glide or Crash, Cold Light, and Size Matters.
+                                </p>
+                            </div>
+
+                            <div class="mt-6 text-sm text-gray-500">
+                                20 tracks currently archived
+                            </div>
+                        </article>
+
+
+                        <!-- Achievement 4 -->
+                        <article class="achievement-card">
+                            <div>
+                                <span class="achievement-rarity">EPIC</span>
+
+                                <h3 class="text-xl font-bold mt-4 text-white">
+                                    Cold Light Completed
+                                </h3>
+
+                                <p class="text-gray-400 mt-2">
+                                    Completed audio contribution work for <strong>Cold Light</strong>,
+                                    supporting the project as Sound Designer and Musician.
+                                </p>
+                            </div>
+
+                            <div class="mt-6 text-sm text-gray-500">
+                                Achievement unlocked: Completed Project
+                            </div>
+                        </article>
+
+
+                        <!-- Achievement 5 -->
+                        <article class="achievement-card">
+                            <div>
+                                <span class="achievement-rarity">RARE</span>
+
+                                <h3 class="text-xl font-bold mt-4 text-white">
+                                    Systems Designer
+                                </h3>
+
+                                <p class="text-gray-400 mt-2">
+                                    Designed gameplay systems involving combat loops,
+                                    progression, encounters, procedural generation,
+                                    and replayable gameplay experiences.
+                                </p>
+                            </div>
+
+                            <div class="mt-6 text-sm text-gray-500">
+                                Achievement unlocked: Game Design
+                            </div>
+                        </article>
+
+
+                        <!-- Achievement 6 -->
+                        <article class="achievement-card">
+                            <div>
+                                <span class="achievement-rarity">RARE</span>
+
+                                <h3 class="text-xl font-bold mt-4 text-white">
+                                    Multidisciplinary Developer
+                                </h3>
+
+                                <p class="text-gray-400 mt-2">
+                                    Worked across game design, programming, music,
+                                    2D/3D art, storytelling, and technical production
+                                    throughout multiple projects.
+                                </p>
+                            </div>
+
+                            <div class="mt-6 text-sm text-gray-500">
+                                Achievement unlocked: Versatility
+                            </div>
+                        </article>
+
+
+                        <!-- Achievement 7 -->
+                        <article class="achievement-card">
+                            <div>
+                                <span class="achievement-rarity">RARE</span>
+
+                                <h3 class="text-xl font-bold mt-4 text-white">
+                                    Unreal Operator
+                                </h3>
+
+                                <p class="text-gray-400 mt-2">
+                                    Contributed to <strong>Size Matters (Omen IV)</strong>
+                                    as a Game Designer, Technical Artist, Musician,
+                                    and minor programmer using Unreal Engine.
+                                </p>
+                            </div>
+
+                            <div class="mt-6 text-sm text-gray-500">
+                                Achievement unlocked: Unreal Engine Production
+                            </div>
+                        </article>
+
+
+                        <!-- Achievement 8 -->
+                        <article class="achievement-card">
+                            <div>
+                                <span class="achievement-rarity">RARE</span>
+
+                                <h3 class="text-xl font-bold mt-4 text-white">
+                                    Documentation Specialist
+                                </h3>
+
+                                <p class="text-gray-400 mt-2">
+                                    Created game design documents, thesis documentation,
+                                    project reviews, development plans, and supporting
+                                    design materials.
+                                </p>
+                            </div>
+
+                            <div class="mt-6 text-sm text-gray-500">
+                                Achievement unlocked: Technical Documentation
+                            </div>
+                        </article>
+
+
+                        <!-- Achievement 9 -->
+                        <article class="achievement-card">
+                            <div>
+                                <span class="achievement-rarity">UNCOMMON</span>
+
+                                <h3 class="text-xl font-bold mt-4 text-white">
+                                    MonoGame Starter Pack
+                                </h3>
+
+                                <p class="text-gray-400 mt-2">
+                                    Completed early MonoGame projects including <strong>Bullet Hell</strong>
+                                    and <strong>Matching Card Game</strong>, building fundamentals in loops,
+                                    input, collision, and game flow.
+                                </p>
+                            </div>
+
+                            <div class="mt-6 text-sm text-gray-500">
+                                Achievement unlocked: Completed Game Prototypes
+                            </div>
+                        </article>
+
+
+                        <!-- Achievement 10 -->
+                        <article class="achievement-card">
+                            <div>
+                                <span class="achievement-rarity">UNCOMMON</span>
+
+                                <h3 class="text-xl font-bold mt-4 text-white">
+                                    Certification Archive
+                                </h3>
+
+                                <p class="text-gray-400 mt-2">
+                                    Earned and archived certifications across programming,
+                                    web development, Autodesk Maya, and IT competency.
+                                </p>
+                            </div>
+
+                            <div class="mt-6 text-sm text-gray-500">
+                                Achievement unlocked: Credentials
+                            </div>
+                        </article>
+
+
+                        <!-- Achievement 11 -->
+                        <article class="achievement-card">
+                            <div>
+                                <span class="achievement-rarity">UNCOMMON</span>
+
+                                <h3 class="text-xl font-bold mt-4 text-white">
+                                    Six Projects and Counting
+                                </h3>
+
+                                <p class="text-gray-400 mt-2">
+                                    Built and contributed to more than six projects
+                                    spanning games, prototypes, music, visual production,
+                                    and development work.
+                                </p>
+                            </div>
+
+                            <div class="mt-6 text-sm text-gray-500">
+                                Achievement unlocked: Consistent Creation
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATES -->
+        <section id="certificates" class="py-20">
+        <div class="max-w-6xl mx-auto px-6 section-shell rounded-2xl p-6 md:p-8">
+            <span class="section-kicker">Credentials</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-6 fade-item opacity-0 translate-y-6 transition duration-700">Certificates</h2>
+            <p class="text-gray-400 mb-8">A few of my certifications and course completions.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Certificate 1 -->
+            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/21a46f59-e7c2-419f-93a9-b6a8a8062933.png','Certificate - Java')">
+                <img src="assets/certs/21a46f59-e7c2-419f-93a9-b6a8a8062933.png" alt="Certificate 1" class="w-full h-44 object-cover">
+                <div class="p-3 text-left">
+                <p class="text-sm text-gray-300">Certificate - Java</p>
+                </div>
+            </button>
+
+            <!-- Certificate 2 -->
+            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/adce3c8d-0c9d-4c90-a0fd-39bc4c7e08e1 (1).png','Certificate - HTML')">
+                <img src="assets/certs/adce3c8d-0c9d-4c90-a0fd-39bc4c7e08e1 (1).png" alt="Certificate 2" class="w-full h-44 object-cover">
+                <div class="p-3 text-left">
+                <p class="text-sm text-gray-300">Certificate - HTML</p>
+                </div>
+            </button>
+
+            <!-- Certificate 3 -->
+            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/4e145174-2a94-4e6d-a867-9316c60233db.png','Certificate - CSS')">
+                <img src="assets/certs/4e145174-2a94-4e6d-a867-9316c60233db.png" alt="Certificate 3" class="w-full h-44 object-cover">
+                <div class="p-3 text-left">
+                <p class="text-sm text-gray-300">Certificate - CSS</p>
+                </div>
+            </button>
+                
+            <!-- Certificate 4 -->  
+            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/Cert67822621576-1.png','Certificate - Autodesk Maya')">
+                <img src="assets/certs/Cert67822621576-1.png" alt="Certificate 3" class="w-full h-44 object-cover">
+                <div class="p-3 text-left">
+                <p class="text-sm text-gray-300">Certiport Certificate - Autodesk Maya</p>
+                </div>
+            </button>
+
+            <!-- Certificate 5 -->  
+            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/STI_Diploma_JavaAndDotNetTechnology.jpg','STI Las Pinas Senior High Diploma')">
+                <img src="assets/certs/STI_Diploma_JavaAndDotNetTechnology.jpg" alt="STI Diploma" class="w-full h-44 object-cover">
+                <div class="p-3 text-left">
+                <p class="text-sm text-gray-300">STI Las Pinas Senior High Diploma</p>
+                </div>
+            </button>
+
+            <!-- Certificate 6 -->  
+            <button class="group bg-gray-800 rounded-lg overflow-hidden shadow hover:scale-[1.01] transition" onclick="openCert('assets/certs/3EC0FDF5-8282-411D-ABD9-279587D3E934.png','Certificate - TOPCIT IT Competency Certificate')">
+                <img src="assets/certs/3EC0FDF5-8282-411D-ABD9-279587D3E934.png" alt="Certificate 3" class="w-full h-44 object-cover">
+                <div class="p-3 text-left">
+                <p class="text-sm text-gray-300">Certificate - TOPCIT LEVEL 3 IT</p>
+                </div>
+            </button>
+
+            </div>
+        </div>
+        </section>
+
+        <!-- CHANGELOG / DEVELOPMENT LOG -->
+        <!-- Scheduled for next deployment cycle -->
+        <section id="changelog" class="px-6 py-16 md:py-24">
+
+            <div class="max-w-7xl mx-auto">
+
+                <div class="section-shell p-6 md:p-8">
+
+                    <!-- Header -->
+                    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+
+                        <div>
+                            <p class="hero-command mb-2">
+                                System Log // Development History
+                            </p>
+
+                            <h2 class="text-3xl md:text-4xl font-bold">
+                                Changelog
+                            </h2>
+
+                            <p class="text-gray-400 mt-2 max-w-2xl">
+                                A running record of portfolio updates, project progress,
+                                new features, and development milestones.
+                            </p>
+                        </div>
+
+                        <div class="version-chip">
+                            BUILD 2026.09.19
+                        </div>
+
+                    </div>
+
+
+                    <!-- Changelog Entries -->
+                    <div class="changelog-grid">
+
+
+                        <!-- Entry 1 -->
+                        <article class="changelog-card">
+
+                            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+
+                                <time datetime="2026-09-19">
+                                    2026.09.19
+                                </time>
+
+                                <span class="status-chip">
+                                    PORTFOLIO UPDATE
+                                </span>
+
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                PORTFOLIO.EXE // SYSTEM REFACTOR
+                            </h3>
+
+                            <p class="text-gray-400 mb-4">
+                                Refactored the portfolio asset pipeline to separate CSS and JavaScript
+                                into dedicated files, reducing index.html complexity and improving
+                                long-term maintainability while preserving the game-inspired interface.
+                            </p>
+
+                            <ul class="text-sm text-gray-500 space-y-2">
+                                <li>+ Separated CSS into assets/css/style.css</li>
+                                <li>+ Separated JavaScript into assets/js/main.js</li>
+                                <li>+ Simplified index.html for easier maintenance</li>
+                                <li>+ Replaced native alert dialogs with themed toast notifications</li>
+                                <li>+ Fixed Cold Light track count display (2 -> 3 tracks)</li>
+                                <li>+ Normalized changelog time formatting for consistency</li>
+                                <li>+ Standardized music track URL encoding</li>
+                                <li>+ Cleaned up unused selectors and inconsistent markup</li>
+                            </ul>
+
+                        </article>
+
+
+                        <!-- Entry 2 -->
+                        <article class="changelog-card">
+
+                            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+
+                                <time datetime="2026-09-14">
+                                    2026.09.19
+                                </time>
+
+                                <span class="status-chip">
+                                    PORTFOLIO UPDATE
+                                </span>
+
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                PORTFOLIO.EXE REDESIGN
+                            </h3>
+
+                            <p class="text-gray-400 mb-4">
+                                Redesigned the portfolio around the ALDRECK // PORTFOLIO.EXE
+                                concept while keeping the website focused on professional
+                                presentation and recruiter-friendly navigation.
+                            </p>
+
+                            <ul class="text-sm text-gray-500 space-y-2">
+                                <li>+ Added game-inspired interface system</li>
+                                <li>+ Added Current Quests section</li>
+                                <li>+ Added Achievement system</li>
+                                <li>+ Added integrated soundtrack player</li>
+                                <li>+ Reorganized music into project galleries</li>
+                                <li>+ Added voice acting project reel</li>
+                                <li>+ Added matched project visuals for soundtrack/game sections</li>
+                                <li>+ Fixed showreel carousel autoplay while videos are active</li>
+                                <li>+ Added portfolio build/version tracking</li>
+                                <li>+ Added development changelog</li>
+                            </ul>
+
+                        </article>
+
+
+                        <!-- Entry 3 -->
+                        <article class="changelog-card">
+
+                            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+
+                                <time datetime="">
+                                    PROJECT DEVELOPMENT
+                                </time>
+
+                                <span class="status-chip">
+                                    USURPERS
+                                </span>
+
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                Usurpers: Freedom
+                            </h3>
+
+                            <p class="text-gray-400 mb-4">
+                                Continued development of the multiplayer dungeon-crawler
+                                roguelike capstone project.
+                            </p>
+
+                            <ul class="text-sm text-gray-500 space-y-2">
+                                <li>+ Procedural dungeon generation development</li>
+                                <li>+ A* pathfinding integration</li>
+                                <li>+ Multiplayer gameplay development</li>
+                                <li>+ Combat and progression systems</li>
+                                <li>+ Lore and relic system development</li>
+                            </ul>
+
+                        </article>
+
+
+                        <!-- Entry 4 -->
+                        <article class="changelog-card">
+
+                            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+
+                                <time datetime="">
+                                    PROJECT DEVELOPMENT
+                                </time>
+
+                                <span class="status-chip">
+                                    GAME JAM
+                                </span>
+
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                Glide or Crash
+                            </h3>
+
+                            <p class="text-gray-400 mb-4">
+                                Continued development and presentation of the project
+                                as part of the growing game portfolio.
+                            </p>
+
+                            <ul class="text-sm text-gray-500 space-y-2">
+                                <li>+ Project added to portfolio archive</li>
+                                <li>+ Game visuals and project information updated</li>
+                                <li>+ Featured in PGDX Indie Game Stars 2026</li>
+                            </ul>
+
+                        </article>
+
+
+                        <!-- Entry 5 -->
+                        <article class="changelog-card">
+
+                            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+
+                                <time datetime="">
+                                    PROJECT DEVELOPMENT
+                                </time>
+
+                                <span class="status-chip">
+                                    UNREAL ENGINE
+                                </span>
+
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                Size Matters (Omen IV)
+                            </h3>
+
+                            <p class="text-gray-400 mb-4">
+                                Contributed across multiple disciplines during development,
+                                combining game design, technical art, music, and programming.
+                            </p>
+
+                            <ul class="text-sm text-gray-500 space-y-2">
+                                <li>+ Game Design</li>
+                                <li>+ Technical Art</li>
+                                <li>+ Music</li>
+                                <li>+ Minor Programming</li>
+                            </ul>
+
+                        </article>
+
+
+                        <!-- Entry 6 -->
+                        <article class="changelog-card">
+
+                            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+
+                                <time datetime="">
+                                    AUDIO ARCHIVE
+                                </time>
+
+                                <span class="status-chip">
+                                    MUSIC
+                                </span>
+
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                Soundtrack Archive Expansion
+                            </h3>
+
+                            <p class="text-gray-400 mb-4">
+                                Expanded the portfolio's music archive to document original
+                                compositions created for game projects.
+                            </p>
+
+                            <ul class="text-sm text-gray-500 space-y-2">
+                                <li>+ Usurpers' Freedom</li>
+                                <li>+ Time Paradox Rampage</li>
+                                <li>+ The Forge of Destiny</li>
+                                <li>+ Glide or Crash</li>
+                                <li>+ Cold Light</li>
+                                <li>+ Size Matters</li>
+                                <li>+ 20 tracks currently archived</li>
+                            </ul>
+
+                        </article>
+
+
+                        <!-- Entry 7 -->
+                        <article class="changelog-card">
+
+                            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+
+                                <time datetime="">
+                                    DEVELOPMENT TRACK
+                                </time>
+
+                                <span class="status-chip">
+                                    ONGOING
+                                </span>
+
+                            </div>
+
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                Portfolio.EXE — Continuous Development
+                            </h3>
+
+                            <p class="text-gray-400 mb-4">
+                                The portfolio remains an active project and will continue
+                                receiving updates as new games, skills, music, artwork,
+                                certifications, and development milestones are completed.
+                            </p>
+
+                            <ul class="text-sm text-gray-500 space-y-2">
+                                <li>+ New projects will be added as they become presentable</li>
+                                <li>+ Existing project information will be refined</li>
+                                <li>+ New music and artwork will be archived</li>
+                                <li>+ Portfolio features will continue to evolve</li>
+                            </ul>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="py-20">
+        <div class="max-w-4xl mx-auto px-6 section-shell rounded-2xl p-6 md:p-8 text-center">
+            <div class="fade-item opacity-0 translate-y-6 transition duration-700">
+            <span class="section-kicker">Collaboration</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-4">Get in Touch</h2>
+            <p class="text-gray-300 mb-8">Feel free to reach out if you'd like to collaborate, ask about my work, or review a project build.</p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:aldreckdegurechaff@gmail.com" class="flex items-center gap-2 px-5 py-3 bg-cyan-500 hover:bg-cyan-600 rounded-full text-white transition">
+                <!-- mail icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0l-8-8m8 8l-8 8"/>
+                </svg>
+                Email
+                </a>
+
+                <a href="https://www.linkedin.com/in/aldreck-paul-obenario-490a47381/?skipRedirect=true" target="_blank" class="flex items-center gap-2 px-5 py-3 border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-gray-900 rounded-full transition">
+                <!-- linkedin icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762
+                    0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268
+                    c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783
+                    1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.062
+                    -1.867-3.062-1.869 0-2.155 1.46-2.155 2.968v5.698h-3v-10h2.881v1.367h.041c.401-.76
+                    1.379-1.561 2.841-1.561 3.04 0 3.6 2.003 3.6 4.606v5.588z"/>
+                </svg>
+                LinkedIn
+                </a>
+
+                <a href="https://github.com/aruDegurechaff" target="_blank" class="flex items-center gap-2 px-5 py-3 border border-gray-700 text-gray-300 hover:bg-gray-800 rounded-full transition">
+                <!-- github icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 .5C5.648.5.5 5.648.5 12c0 5.086 3.292 9.397 7.865 10.916.575.107.786-.25.786-.556
+                    0-.274-.01-1-.016-1.964-3.197.695-3.872-1.54-3.872-1.54-.524-1.33-1.281-1.684-1.281-1.684-1.047-.716.08-.701.08-.701
+                    1.158.082 1.769 1.19 1.769 1.19 1.03 1.766 2.705 1.256 3.367.961.104-.746.403-1.256.733-1.545-2.55-.29-5.231-1.275-5.231-5.674
+                    0-1.254.448-2.28 1.183-3.084-.119-.29-.512-1.456.113-3.037 0 0 .964-.308 3.162 1.176.916-.255
+                    1.9-.383 2.878-.388.977.005 1.961.133 2.878.388 2.198-1.484 3.161-1.176 3.161-1.176.626 1.581.233 2.747.114
+                    3.037.736.804 1.182 1.83 1.182 3.084 0 4.41-2.685 5.381-5.244 5.664.414.356.783 1.057.783 2.132
+                    0 1.54-.014 2.781-.014 3.161 0 .308.208.667.792.554C20.713 21.393 24 17.084 24 12
+                    24 5.648 18.852.5 12 .5z"/>
+                </svg>
+                GitHub
+                </a>
+                
+                <!-- Itch.io soon! -->  
+                <button onclick="alertSoon('Itch.io')" class="flex items-center gap-2 px-5 py-3 border border-gray-700 text-gray-300 hover:bg-gray-800 rounded-full transition">
+                <!-- itch icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M2 3h20l2 18-12-5-12 5 2-18zm2 2v12.17l8-3.34 8 3.34v-12.17h-16z"/>
+                </svg>
+                Itch.io
+                </button>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="py-8 bg-gray-950">
+            <div class="max-w-6xl mx-auto px-6 text-center text-gray-500">
+                &copy; <span id="year"></span> Aldreck Obenario - ALDRECK // PORTFOLIO.EXE Build 2026.09.19 - Contact: <a href="mailto:aldreckdegurechaff@gmail.com" class="text-cyan-400">aldreckdegurechaff@gmail.com</a>
+            </div>
+        </footer>
+        <button id="backToTop" class="back-top px-4 py-2 rounded-full bg-cyan-500 text-white hover:bg-cyan-600 shadow-lg" aria-label="Back to top">Top</button>
+    </main>
+
+        <!-- GAME DETAIL MODAL -->
+    <div id="gameModal" class="fixed inset-0 hidden items-center justify-center z-50 modal-backdrop px-4">
+        <div class="bg-gray-900 rounded-2xl shadow-xl max-w-3xl w-full overflow-hidden">
+        <div class="flex items-center justify-between p-4 border-b border-gray-800">
+            <h3 id="gameModalTitle" class="text-lg font-bold text-white"></h3>
+            <button onclick="closeGameModal()" class="text-gray-400 hover:text-white p-2">&times;</button>
+        </div>
+
+        <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <img id="gameModalImg" src="" alt="" class="w-full h-44 object-cover rounded-lg md:col-span-1">
+            <div class="md:col-span-2">
+            <p id="gameModalDesc" class="text-gray-300 mb-4"></p>
+            <div class="flex gap-3">
+                <a id="gameModalDownload" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-cyan-500 text-white rounded-full">Download</a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- CERT LIGHTBOX -->
+    <div id="certModal" class="fixed inset-0 hidden items-center justify-center z-50 modal-backdrop px-4">
+    <div class="bg-gray-900 rounded-lg shadow-xl max-w-4xl w-full overflow-hidden">
+        <div class="flex items-center justify-between p-3 border-b border-gray-800">
+        <h4 id="certModalTitle" class="text-white font-semibold">Certificate</h4>
+        <button onclick="closeCert()" class="text-gray-400 hover:text-white p-2">&times;</button>
+        </div>
+        <div class="p-4 flex justify-center items-center">
+        <img 
+            id="certModalImg" 
+            src="" 
+            alt="Certificate" 
+            class="max-h-[80vh] w-auto object-contain rounded transition-all duration-200"
+        >
+        </div>
+    </div>
+    </div>
+
+    <!-- ART MODAL -->
+    <div id="artModal" class="fixed inset-0 hidden items-center justify-center z-50 modal-backdrop px-4 bg-black/70">
+        <div id="artModalContentWrapper" class="bg-gray-900 rounded-lg shadow-xl max-w-5xl w-full overflow-hidden relative">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-3 border-b border-gray-800">
+                <h4 id="artModalTitle" class="text-white font-semibold">Art</h4>
+                <button onclick="closeArtModal()" class="text-gray-400 hover:text-white p-2">&times;</button>
+            </div>
+
+            <!-- Carousel Content -->
+            <div id="artModalContent" class="p-4 flex justify-center items-center">
+                <img id="artModalImage" src="" alt="Art" class="max-h-[70vh] max-w-full object-contain rounded shadow">
+            </div>
+
+            <!-- Navigation -->
+            <button id="prevArt" class="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-1 rounded">&#8249;</button>
+            <button id="nextArt" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 text-white px-3 py-1 rounded">&#8250;</button>
+        </div>
+    </div>
+
+    <!-- VOICE REEL MODAL -->
+    <div id="voiceModal" class="fixed inset-0 hidden items-center justify-center z-50 modal-backdrop px-4 bg-black/70">
+        <div class="bg-gray-900 rounded-lg shadow-xl max-w-5xl w-full overflow-hidden">
+            <div class="flex items-center justify-between p-4 border-b border-gray-800">
+                <div>
+                    <h4 id="voiceModalTitle" class="text-white font-semibold">Voice Acting</h4>
+                    <p id="voiceModalSubtitle" class="text-sm text-gray-400"></p>
+                </div>
+                <button onclick="closeVoiceModal()" class="text-gray-400 hover:text-white p-2">&times;</button>
+            </div>
+            <div class="p-4 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <img id="voiceModalImage" src="" alt="Voice acting project" class="w-full aspect-video object-cover rounded-lg md:col-span-1">
+                <div id="voiceModalList" class="voice-modal-list md:col-span-2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="assets/js/main.js" defer></script>
+
+    </body>
+
+</html>
